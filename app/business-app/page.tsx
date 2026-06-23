@@ -6,18 +6,23 @@ export default function BusinessAppPage() {
   return (
     <ProductLandingPage
       label="NativeTalk Business App"
-      title="One App for Every Customer Conversation"
-      subtitle="The smarter way to run your business communication"
-      description="NativeTalk helps businesses manage calls, WhatsApp, Instagram, Facebook, email, team routing, shared inboxes, and AI-powered conversation summaries from one place."
+      title="Start receiving business calls without the old setup stress"
+      subtitle="A modern hotline app for Nigerian SMEs and growing teams"
+      description="NativeTalk helps businesses receive calls faster, manage customer conversations, route work to the right teammate, and keep a clean record of every interaction from one business communication app."
+      image={{
+        src: "/product/business-app.png",
+        alt: "NativeTalk business communication interface",
+      }}
       bullets={[
         "Dedicated business hotline and virtual number",
-        "Shared team inbox for customer conversations",
-        "Call routing, masking, recordings, and logs",
-        "WhatsApp, Instagram, Facebook Messenger, website chat, and more channels coming",
+        "Start receiving calls through a simple guided setup flow",
+        "Shared team inbox for customer calls and messages",
+        "Call routing, masking, recordings, logs, and accountability",
+        "WhatsApp, Instagram, Facebook Messenger, website chat, and more channels planned",
         "AI executive summary and analytics add-on",
       ]}
       plans={[
-        { name: "Basic", price: "₦2,500/user/month", details: "For one user starting with a dedicated business line.", cta: "Download App" },
+        { name: "Basic", price: "NGN 2,500/user/month", details: "For one user starting with a dedicated business line.", cta: "Download App" },
         { name: "Standard", price: "Per user/month", details: "For 2-20 users that need team calling, routing, and shared workflows.", cta: "Start Free Trial" },
         { name: "Enterprise", price: "Custom Pricing", details: "For 20+ users, custom scope, integrations, and negotiated rollout.", cta: "Contact Sales" },
       ]}

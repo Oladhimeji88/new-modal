@@ -13,6 +13,10 @@ type ProductLandingPageProps = {
   title: string;
   subtitle: string;
   description: string;
+  image: {
+    src: string;
+    alt: string;
+  };
   bullets: string[];
   plans: Plan[];
   note?: string;
@@ -23,6 +27,7 @@ export function ProductLandingPage({
   title,
   subtitle,
   description,
+  image,
   bullets,
   plans,
   note,
@@ -32,13 +37,18 @@ export function ProductLandingPage({
       <ScrollToTop />
       <main className="nt-product-page">
         <section className="nt-product-hero">
-          <p className="nt-product-label">{label}</p>
-          <h1>{title}</h1>
-          <h2>{subtitle}</h2>
-          <p>{description}</p>
-          <div className="nt-product-actions">
-            <a href="/pricing">Get started</a>
-            <a href="/contact">Talk to sales</a>
+          <div className="nt-product-hero-copy">
+            <p className="nt-product-label">{label}</p>
+            <h1>{title}</h1>
+            <h2>{subtitle}</h2>
+            <p>{description}</p>
+            <div className="nt-product-actions">
+              <a href="/pricing">Get started</a>
+              <a href="/contact">Talk to sales</a>
+            </div>
+          </div>
+          <div className="nt-product-hero-media nt-reveal-image">
+            <img src={image.src} alt={image.alt} />
           </div>
         </section>
 
