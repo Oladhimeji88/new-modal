@@ -9,6 +9,10 @@ export default function EnterprisePage() {
       title="Team of 1 or 50+, we have a solution for you"
       subtitle="CRM, VoIP, APIs, and call centre infrastructure"
       description="Set up a professional call centre, connect sales and support teams, integrate with CRM workflows, and manage customer communication with routing, reporting, white-label options, and dedicated support."
+      image={{
+        src: "/product/enterprise.png",
+        alt: "NativeTalk enterprise communication dashboard",
+      }}
       bullets={[
         "Cloud call centre setup in as little as 24 hours",
         "CRM visibility for customer conversations",

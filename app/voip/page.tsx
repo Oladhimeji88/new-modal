@@ -9,6 +9,10 @@ export default function VoipPage() {
       title="Cloud phone systems for serious call operations"
       subtitle="Cloud PBX, Cloud Call Center, and SIP services"
       description="NativeTalk VoIP is the sales-routed service line for businesses that need cloud PBX, cloud call center infrastructure, SIP connectivity, virtual numbers, and controlled calling costs."
+      image={{
+        src: "/product/voip.png",
+        alt: "NativeTalk VoIP cloud phone system visual",
+      }}
       bullets={[
         "Cloud PBX for modern business calling",
         "Cloud call center setup for teams and branches",
@@ -17,7 +21,7 @@ export default function VoipPage() {
         "Sales-led configuration for negotiated requirements",
       ]}
       plans={[
-        { name: "Personal App", price: "₦10,000 MRC", details: "Personal NativeTalk app line item from the VoIP rate card.", cta: "Get Started" },
+        { name: "Personal App", price: "NGN 10,000 MRC", details: "Personal NativeTalk app line item from the VoIP rate card.", cta: "Get Started" },
         { name: "Cloud PBX", price: "Contact Sales", details: "Configured for business telephony, extensions, and routing.", cta: "Talk to Sales" },
         { name: "Cloud Call Center", price: "Contact Sales", details: "Sales-routed call center deployment for support and sales teams.", cta: "Talk to Sales" },
       ]}

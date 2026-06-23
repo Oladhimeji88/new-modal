@@ -474,7 +474,47 @@ body {
     linear-gradient(135deg, rgba(10, 33, 31, 0.98), rgba(16, 58, 44, 0.94)),
     #0a211f;
   color: white;
+  display: grid;
+  gap: clamp(32px, 5vw, 72px);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
+  overflow: hidden;
   padding: 120px clamp(24px, 7vw, 112px) 92px;
+}
+
+.nt-legal-hero {
+  display: block;
+}
+
+.nt-product-hero-copy {
+  align-self: center;
+  min-width: 0;
+}
+
+.nt-product-hero-media {
+  align-self: center;
+  aspect-ratio: 4 / 5;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+  max-height: 560px;
+  overflow: hidden;
+  position: relative;
+}
+
+.nt-product-hero-media::after {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 34%),
+    linear-gradient(0deg, rgba(10, 33, 31, 0.24), transparent 46%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.nt-product-hero-media img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 .nt-legal-eyebrow,
@@ -514,7 +554,7 @@ body {
 }
 
 .nt-legal-intro,
-.nt-product-hero > p {
+.nt-product-hero-copy > p {
   color: rgba(255, 255, 255, 0.82);
   font-size: 18px;
   line-height: 1.7;
@@ -875,7 +915,13 @@ body {
 
   .nt-legal-hero,
   .nt-product-hero {
+    grid-template-columns: 1fr;
     padding: 88px 24px 68px;
+  }
+
+  .nt-product-hero-media {
+    aspect-ratio: 16 / 10;
+    max-height: none;
   }
 
   .nt-legal-content,

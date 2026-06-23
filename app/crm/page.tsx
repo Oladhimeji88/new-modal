@@ -9,6 +9,10 @@ export default function CrmPage() {
       title="Centralize every customer relationship"
       subtitle="A communication CRM for growing African businesses"
       description="NativeTalk CRM gives larger teams visibility into customer conversations, sales follow-up, support performance, and team accountability across calls and messaging channels."
+      image={{
+        src: "/product/crm.png",
+        alt: "NativeTalk CRM customer conversation workspace",
+      }}
       bullets={[
         "Customer conversation history in one workspace",
         "Lead and support pipeline visibility",
