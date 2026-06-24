@@ -46,8 +46,8 @@ function Frame() {
       <div className="flex flex-col font-['Outfit:ExtraBold',sans-serif] justify-center mb-[-1px] not-italic relative shrink-0 text-[66.2px] text-white tracking-[-1.9px] whitespace-nowrap">
         <p className="leading-[80px]">Powering</p>
       </div>
-      <div className="flex flex-col font-['Instrument_Serif:Italic',sans-serif] italic justify-center relative shrink-0 text-[#87ff5c] text-[76px] tracking-[0.1px] w-[492px]">
-        <p className="leading-[80px]">Communications</p>
+      <div className="flex flex-col font-['Instrument_Serif:Italic',sans-serif] italic justify-center relative shrink-0 text-[#87ff5c] text-[76px] tracking-[0.1px] w-auto whitespace-nowrap">
+        <p className="leading-[80px] whitespace-nowrap">Communications</p>
       </div>
     </div>
   );

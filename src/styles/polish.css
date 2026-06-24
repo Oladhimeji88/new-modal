@@ -219,15 +219,19 @@ body {
 
 .nt-hero-section [data-name*="Heading 1"] [class*="Outfit"] p,
 .nt-hero-section [data-name*="Heading 1"] [class*="Outfit"] {
-  font-size: clamp(3.35rem, 5.2vw, 5.25rem) !important;
+  font-size: clamp(2.6rem, 5vw, 4.4rem) !important;
   font-weight: 800 !important;
 }
 
-.nt-hero-section [data-name*="Heading 1"] [class*="Instrument_Serif"] p,
-.nt-hero-section [data-name*="Heading 1"] [class*="Instrument_Serif"] {
+.nt-hero-section [data-name*="Heading 1"] [class*="Instrument_Serif"],
+.nt-hero-section [data-name*="Heading 1"] [class*="Instrument_Serif"] p {
   color: #87ff5c;
-  font-size: clamp(3.95rem, 5.85vw, 5.9rem) !important;
+  font-size: clamp(2.6rem, 6.2vw, 4.6rem) !important;
   text-shadow: 0 0 42px rgba(135, 255, 92, 0.18);
+  /* Keep the italic "Communications" headline on a single line */
+  white-space: nowrap !important;
+  width: auto !important;
+  max-width: 100% !important;
 }
 
 .nt-hero-section [data-name="astro-island"] [class*="text-[#f7f9f2]"] {
