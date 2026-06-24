@@ -10,7 +10,7 @@ export default function CrmPage() {
       subtitle="A communication CRM for growing African businesses"
       description="NativeTalk CRM gives larger teams visibility into customer conversations, sales follow-up, support performance, and team accountability across calls and messaging channels."
       image={{
-        src: "/product/crm.png",
+        src: "/ZenBook Duo 16.png",
         alt: "NativeTalk CRM customer conversation workspace",
       }}
       bullets={[
