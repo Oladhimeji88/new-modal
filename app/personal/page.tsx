@@ -18,7 +18,6 @@ export default function PersonalPage() {
         "Disposable numbers for temporary use",
         "Customized incoming call rates",
         "Unique extensions for family, colleagues, and friends",
-        "No physical SIM card required",
       ]}
       plans={[
         { name: "Personal App", price: "NGN 10,000 MRC", details: "NativeTalk personal line item from the VoIP rate card.", cta: "Get Started" },
