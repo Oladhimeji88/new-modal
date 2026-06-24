@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../src/styles/index.css";
+import { SmoothScroll } from "../src/app/components/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "NativeTalk",
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="nt-app">{children}</body>
+      <body className="nt-app">
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }
