@@ -364,6 +364,18 @@ body {
   width: 100% !important;
 }
 
+/* Reduce the testimonial card size on large screens. Below 1180px the marquee
+   already scales down responsively, so this is scoped to desktop. Scaling the
+   whole marquee keeps the seamless loop intact (the cards sit at fixed offsets
+   the animation depends on); the negative margin reclaims the freed space. */
+@media (min-width: 1181px) {
+  .nt-testimonial-marquee {
+    margin-bottom: -104px;
+    transform: scale(0.85);
+    transform-origin: center top;
+  }
+}
+
 .nt-testimonial-row {
   will-change: transform;
 }

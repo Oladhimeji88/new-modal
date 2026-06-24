@@ -8,8 +8,8 @@
   color: #0a211f;
   min-height: 100vh;
   margin: 0 auto;
-  max-width: 1120px;
-  padding: 132px 24px 120px;
+  max-width: 1320px;
+  padding: 132px 32px 120px;
 }
 
 .nt-blog-masthead {
@@ -195,7 +195,7 @@
    Article (single post) — Medium reading column
    ------------------------------------------------------------------------- */
 .nt-blog-article-page {
-  max-width: 1120px;
+  max-width: 1320px;
 }
 
 .nt-blog-article {
@@ -727,6 +727,12 @@
   letter-spacing: 0.1px;
   line-height: 1.12;
   margin: 2px 0 0;
+}
+
+/* Blog index cards use a smaller title than the homepage story tiles. */
+.nt-blog-tile-title {
+  font-size: clamp(1.15rem, 1.4vw, 1.4rem);
+  line-height: 1.18;
 }
 
 .nt-story-tile-cat,
