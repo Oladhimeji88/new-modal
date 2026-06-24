@@ -82,12 +82,17 @@ export function FaqPage() {
       <ScrollToTop />
       <main className="nt-faq-page">
         <header className="nt-faq-hero">
-          <p className="nt-faq-eyebrow">Help Center</p>
-          <h1>Frequently asked questions</h1>
-          <p className="nt-faq-intro">
-            Everything you need to know about NativeTalk — virtual numbers, business calling,
-            messaging, pricing, and how it all works together.
-          </p>
+          <span className="nt-faq-eyebrow-pill">Help Center</span>
+          <div className="nt-faq-hero-copy">
+            <h1 className="nt-faq-title">
+              <span className="nt-faq-title-main">Frequently asked</span>{' '}
+              <span className="nt-faq-title-accent">questions</span>
+            </h1>
+            <p className="nt-faq-intro">
+              Everything you need to know about NativeTalk — virtual numbers, business calling,
+              messaging, pricing, and how it all works together.
+            </p>
+          </div>
         </header>
 
         <div className="nt-faq-body">

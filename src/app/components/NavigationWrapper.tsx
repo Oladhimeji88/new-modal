@@ -111,6 +111,49 @@ export function NavigationWrapper({ children }: NavigationWrapperProps) {
         } else {
           router.push('/');
         }
+        return;
+      }
+
+      // Generic CTA routing for button-like elements anywhere on a page.
+      // Figma exports render most CTAs as non-interactive <div>s, so we route
+      // them by their label. Real <a href> links are left to navigate natively.
+      const cta = target.closest<HTMLElement>(
+        '[data-name="Button"], [data-name="Link"], [class*="rounded-[999px]"], [class*="rounded-[99px]"], button, a'
+      );
+      if (cta && !cta.closest('a[href]')) {
+        const label = (cta.textContent ?? '').trim().toLowerCase().replace(/\s+/g, ' ');
+        const has = (s: string) => label.includes(s);
+        let route: string | null = null;
+
+        if (!label) {
+          route = null;
+        } else if (has('download')) {
+          route = '/personal';
+        } else if (has('reserve a number')) {
+          route = '/business-app';
+        } else if (has('view crm') || has('explore crm')) {
+          route = '/crm';
+        } else if (
+          has('start free trial') || has('free trial') || has('subscribe') ||
+          has('view pricing') || has('see pricing') || has('view plans') ||
+          has('view plan') || has('get started') || has('choose plan') ||
+          has('select plan') || has('upgrade') || has('get the app') ||
+          has('explore products')
+        ) {
+          route = '/pricing';
+        } else if (
+          has('talk to sales') || has('contact sales') || label === 'contact' ||
+          has('contact us') || has('get in touch') || has('book a demo') ||
+          has('request a demo') || has('talk to us')
+        ) {
+          route = '/contact';
+        }
+
+        if (route) {
+          e.preventDefault();
+          e.stopPropagation();
+          router.push(route);
+        }
       }
     };
 
