@@ -41,6 +41,12 @@
   white-space: nowrap;
 }
 
+@media (max-width: 560px) {
+  .nt-mast-nowrap {
+    white-space: normal;
+  }
+}
+
 .nt-blog-sub {
   color: #5b665f;
   font-size: 18px;
