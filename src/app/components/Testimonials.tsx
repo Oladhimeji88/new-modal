@@ -80,6 +80,54 @@ const TESTIMONIALS: Testimonial[] = [
     name: 'Grace Etim',
     role: 'Owner, Calabar Crafts',
   },
+  {
+    quote:
+      'We finally retired the office landline. One cloud number follows us to every market we open.',
+    name: 'Halima Sadiq',
+    role: 'Founder, Sokoto Textiles',
+  },
+  {
+    quote:
+      'Missed calls used to mean lost money. Now everything routes and rings until someone picks up.',
+    name: 'Peter Okon',
+    role: 'Support Lead, SwiftPay',
+  },
+  {
+    quote:
+      'Patients book and confirm over WhatsApp while our lines stay open for emergencies. It just works.',
+    name: 'Ada Maduike',
+    role: 'Director, CarePoint Pharmacy',
+  },
+  {
+    quote:
+      'Our drivers and dispatchers stay in sync without sharing personal numbers. Privacy and speed in one app.',
+    name: 'Kunle Balogun',
+    role: 'CEO, Naija Movers',
+  },
+  {
+    quote:
+      'Bookings doubled once clients could call, chat, and DM us in one place. Nothing falls through anymore.',
+    name: 'Rita Ogunleye',
+    role: 'Owner, The Glow Studio',
+  },
+  {
+    quote:
+      'Call recordings settled three disputes last month alone. The paper trail is priceless.',
+    name: 'Musa Danjuma',
+    role: 'Operations, Jos AgriTech',
+  },
+  {
+    quote:
+      'Setup took an afternoon and zero IT help. By evening we were taking orders on a proper business line.',
+    name: 'Blessing Eze',
+    role: 'Manager, UrbanThreads',
+  },
+  {
+    quote:
+      'Reliable calls, clear reporting, and support that picks up. That trio is rare in this market.',
+    name: 'Tobi Animashaun',
+    role: 'Founder, DevHub Lagos',
+  },
 ];
 
 function Card({ t }: { t: Testimonial }) {
