@@ -279,7 +279,7 @@ function Link() {
 
 function Footer() {
   return (
-    <div className="content-stretch flex flex-col items-start pt-[40px] relative shrink-0 w-full" data-name="Footer">
+    <div className="content-stretch flex flex-col items-start pt-[40px] relative shrink-0 w-full" data-name="CardFooter">
       <Link />
     </div>
   );
@@ -532,7 +532,7 @@ function Link1() {
 
 function Footer1() {
   return (
-    <div className="content-stretch flex flex-col items-start pt-[40px] relative shrink-0 w-full" data-name="Footer">
+    <div className="content-stretch flex flex-col items-start pt-[40px] relative shrink-0 w-full" data-name="CardFooter">
       <Link1 />
     </div>
   );
@@ -761,7 +761,7 @@ function Link2() {
 
 function Footer2() {
   return (
-    <div className="content-stretch flex flex-col items-start pt-[40px] relative shrink-0 w-full" data-name="Footer">
+    <div className="content-stretch flex flex-col items-start pt-[40px] relative shrink-0 w-full" data-name="CardFooter">
       <Link2 />
     </div>
   );
