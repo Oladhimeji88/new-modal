@@ -1716,9 +1716,9 @@ function Background() {
 
 function Container78() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-h-px relative w-[390px]" data-name="Container">
+    <a className="nt-product-card content-stretch flex flex-[1_0_0] flex-col items-start min-h-px relative w-[390px] cursor-pointer no-underline" data-name="Container" href="/business-app" aria-label="NativeTalk Business">
       <Background />
-    </div>
+    </a>
   );
 }
 
@@ -1778,9 +1778,9 @@ function Background1() {
 
 function Container80() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-h-px relative w-[390px]" data-name="Container">
+    <a className="nt-product-card content-stretch flex flex-[1_0_0] flex-col items-start min-h-px relative w-[390px] cursor-pointer no-underline" data-name="Container" href="/crm" aria-label="NativeTalk CRM">
       <Background1 />
-    </div>
+    </a>
   );
 }
 
@@ -1842,9 +1842,9 @@ function Background2() {
 
 function Container82() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-h-px relative w-[390px]" data-name="Container">
+    <a className="nt-product-card content-stretch flex flex-[1_0_0] flex-col items-start min-h-px relative w-[390px] cursor-pointer no-underline" data-name="Container" href="/voip" aria-label="NativeTalk VoIP">
       <Background2 />
-    </div>
+    </a>
   );
 }
 
