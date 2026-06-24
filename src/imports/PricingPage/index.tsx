@@ -105,7 +105,7 @@ function Frame4() {
 
 function Header1() {
   return (
-    <div className="[word-break:break-word] content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Header">
+    <div className="[word-break:break-word] content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="CardHeader">
       <p className="font-['Outfit:Bold',sans-serif] leading-[32px] not-italic relative shrink-0 text-[#12151c] text-[24px] whitespace-nowrap">Personal</p>
       <Frame4 />
       <p className="font-['Inter:Regular',sans-serif] font-normal leading-[26px] min-w-full not-italic relative shrink-0 text-[#5b665f] text-[16.2px] w-[min-content]">Ideal for solo entrepreneurs and individuals looking for a professional extension.</p>
@@ -318,7 +318,7 @@ function Frame11() {
 
 function Header2() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Header">
+    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="CardHeader">
       <Frame10 />
       <p className="[word-break:break-word] font-['Outfit:Bold',sans-serif] leading-[32px] not-italic relative shrink-0 text-[24px] text-white whitespace-nowrap">Business</p>
       <Frame11 />
@@ -560,7 +560,7 @@ function Frame18() {
 
 function Header3() {
   return (
-    <div className="[word-break:break-word] content-stretch flex flex-col gap-[16px] items-start not-italic relative shrink-0 w-full" data-name="Header">
+    <div className="[word-break:break-word] content-stretch flex flex-col gap-[16px] items-start not-italic relative shrink-0 w-full" data-name="CardHeader">
       <p className="font-['Outfit:Bold',sans-serif] leading-[32px] relative shrink-0 text-[#12151c] text-[24px] whitespace-nowrap">Enterprise</p>
       <Frame18 />
       <p className="font-['Inter:Regular',sans-serif] font-normal leading-[26px] min-w-full relative shrink-0 text-[#5b665f] text-[16.2px] w-[min-content]">Customized solutions for large organizations needing high-volume throughput.</p>
