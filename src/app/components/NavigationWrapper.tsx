@@ -18,10 +18,6 @@ export function NavigationWrapper({ children }: NavigationWrapperProps) {
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
 
-      // Anchors with an explicit href already navigate natively (hero CTAs,
-      // product/footer links). Don't intercept them here.
-      const anchor = target.closest<HTMLElement>('a[href]');
-
       const navItem = target.closest<HTMLElement>("[data-nav]");
       const productMenuItem = target.closest<HTMLElement>('[data-name="Link"]');
       const isProductMenuLink = !!productMenuItem?.closest(".nt-products-menu");
