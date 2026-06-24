@@ -6,7 +6,8 @@
       "Bash(NODE_OPTIONS=\"--max-old-space-size=8192\" npx next build --webpack)",
       "Bash(ls public/)",
       "Bash(ls public/product/)",
-      "Bash(ls src/app/lib/)"
+      "Bash(ls src/app/lib/)",
+      "Bash(\"/c/Program Files/nodejs/node.exe\" node_modules/next/dist/bin/next dev -p 3000)"
     ]
   }
 }
