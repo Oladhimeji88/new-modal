@@ -921,25 +921,21 @@ body {
 }
 
 .nt-product-gallery-item {
-  background: #0a211f;
-  border-radius: 18px;
+  background: transparent;
   flex: 0 0 auto;
-  height: 300px;
+  height: 320px;
   margin-right: 24px;
-  overflow: hidden;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
-  width: 260px;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nt-product-gallery-item img {
   display: block;
   height: 100%;
-  object-fit: cover;
-  width: 100%;
+  object-fit: contain;
+  width: auto;
 }
 
 .nt-product-gallery-item:hover {
-  box-shadow: 0 18px 40px rgba(10, 33, 31, 0.22);
   transform: rotate(3deg) scale(1.04);
 }
 
