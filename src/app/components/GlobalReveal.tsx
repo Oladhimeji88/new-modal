@@ -18,7 +18,7 @@ const TARGETS = [
   '.nt-legal-section',
   // Blog
   '.nt-blog-masthead > *',
-  '.nt-blog-card',
+  '.nt-blog-tile',
   '.nt-blog-article > *',
   '.nt-blog-related-card',
   // FAQ
