@@ -40,6 +40,7 @@ import imgC20C5Feebed0E15106771D2261B36A0F53B6C2D44512X3238Webp1 from "./0f71157
 import imgImage1 from "./5000c8a4382a2876cfc8b59f531fa7684d837897.png";
 import { imgContainer, imgContainer19, imgGroup, imgG3366, imgG3367, imgG3400, imgGroup1, imgGroup2, imgC20C5Feebed0E15106771D2261B36A0F53B6C2D44512X3238Webp } from "./svg-342b1";
 import { StoryBlog } from "../../app/components/StoryBlog";
+import { HomeFaq } from "../../app/components/HomeFaq";
 
 function Frame() {
   return (
@@ -4055,7 +4056,7 @@ function Section12() {
   return (
     <div className="content-stretch flex flex-col gap-[35.99px] items-center max-w-[1240px] pb-[40px] pt-[112px] px-[28px] relative shrink-0 scroll-mt-[96px] w-[1240px]" data-name="Section" id="faq">
       <Container245 />
-      <Container247 />
+      <HomeFaq />
     </div>
   );
 }

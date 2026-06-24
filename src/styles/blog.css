@@ -742,6 +742,12 @@
   margin: 2px 0 0;
 }
 
+/* Homepage FAQ accordion width (matches the original Figma column). */
+.nt-home-faq {
+  max-width: 820px;
+  width: 100%;
+}
+
 /* ---------------------------------------------------------------------------
    Blog index grid — same tile language as the homepage story section
    ------------------------------------------------------------------------- */
