@@ -302,13 +302,14 @@ function Frame24() {
 
 function Frame23() {
   return (
-    <div className="bg-[#f7f9f2] col-1 justify-self-start relative rounded-[16px] row-1 self-stretch shrink-0" data-name="Frame">
+    <div className="nt-value-card bg-[#f7f9f2] col-1 justify-self-start relative rounded-[16px] row-1 self-stretch shrink-0" data-name="Frame">
       <div className="content-stretch flex flex-col gap-[20px] items-start p-[32px] relative size-full">
-        <div className="relative shrink-0 size-[12px]" data-name="Ellipse">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12 12">
-            <circle cx="6" cy="6" fill="var(--fill-0, #3EBF0F)" id="Ellipse" r="6" />
+        <span className="nt-value-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+            <path d="m9 12 2 2 4-4" />
           </svg>
-        </div>
+        </span>
         <Frame24 />
       </div>
     </div>
@@ -326,13 +327,14 @@ function Frame26() {
 
 function Frame25() {
   return (
-    <div className="bg-[#f7f9f2] col-2 justify-self-start relative rounded-[16px] row-1 self-stretch shrink-0" data-name="Frame">
+    <div className="nt-value-card bg-[#f7f9f2] col-2 justify-self-start relative rounded-[16px] row-1 self-stretch shrink-0" data-name="Frame">
       <div className="content-stretch flex flex-col gap-[20px] items-start p-[32px] relative size-full">
-        <div className="relative shrink-0 size-[12px]" data-name="Ellipse">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12 12">
-            <circle cx="6" cy="6" fill="var(--fill-0, #3EBF0F)" id="Ellipse" r="6" />
+        <span className="nt-value-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z" />
           </svg>
-        </div>
+        </span>
         <Frame26 />
       </div>
     </div>
@@ -350,13 +352,13 @@ function Frame28() {
 
 function Frame27() {
   return (
-    <div className="bg-[#f7f9f2] col-3 justify-self-start relative rounded-[16px] row-1 self-stretch shrink-0" data-name="Frame">
+    <div className="nt-value-card bg-[#f7f9f2] col-3 justify-self-start relative rounded-[16px] row-1 self-stretch shrink-0" data-name="Frame">
       <div className="content-stretch flex flex-col gap-[20px] items-start p-[32px] relative size-full">
-        <div className="relative shrink-0 size-[12px]" data-name="Ellipse">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12 12">
-            <circle cx="6" cy="6" fill="var(--fill-0, #3EBF0F)" id="Ellipse" r="6" />
+        <span className="nt-value-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1h6c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z" />
           </svg>
-        </div>
+        </span>
         <Frame28 />
       </div>
     </div>
@@ -374,13 +376,15 @@ function Frame30() {
 
 function Frame29() {
   return (
-    <div className="bg-[#f7f9f2] col-4 justify-self-start relative rounded-[16px] row-1 self-stretch shrink-0" data-name="Frame">
+    <div className="nt-value-card bg-[#f7f9f2] col-4 justify-self-start relative rounded-[16px] row-1 self-stretch shrink-0" data-name="Frame">
       <div className="content-stretch flex flex-col gap-[20px] items-start p-[32px] relative size-full">
-        <div className="relative shrink-0 size-[12px]" data-name="Ellipse">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12 12">
-            <circle cx="6" cy="6" fill="var(--fill-0, #3EBF0F)" id="Ellipse" r="6" />
+        <span className="nt-value-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
           </svg>
-        </div>
+        </span>
         <Frame30 />
       </div>
     </div>
