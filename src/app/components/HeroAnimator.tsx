@@ -2,83 +2,101 @@
 
 import { useEffect } from "react";
 
-// Each column's scroll distance (px) = max_image_bottom - min_image_top
-// Col 1: images from top=-265 to bottom≈996  → N=1261
-// Col 2: images from top=-209 to bottom≈777  → N=986
-// Col 3: images from top=-28  to bottom≈950  → N=979
-const COLS = [
-  { N: 1261, direction: "up",   duration: 25 },
-  { N: 986,  direction: "down", duration: 25 },
-  { N: 979,  direction: "up",   duration: 28 },
+// Each hero column is a vertical stack of absolutely-positioned images inside
+// the 752px "Mask Group". To scroll them seamlessly we measure each column's
+// real content height at runtime (rather than hard-coding it), clone the stack
+// above and below, and translate by exactly that height — so the loop repeats
+// with no visible jump. Speeds differ slightly per column for a soft parallax.
+const COLUMNS = [
+  { direction: "up", speed: 24 }, // px per second
+  { direction: "down", speed: 30 },
+  { direction: "up", speed: 27 },
 ] as const;
 
 const MARKER = "data-hero-animated";
 
 export function HeroAnimator() {
   useEffect(() => {
-    // Inject keyframes
     const styleEl = document.createElement("style");
-    styleEl.textContent = COLS.map(({ N, direction }) => {
-      const name = `heroScroll${direction === "up" ? "Up" : "Down"}${N}`;
-      return direction === "up"
-        ? `@keyframes ${name} { from { transform: translateY(0); } to { transform: translateY(-${N}px); } }`
-        : `@keyframes ${name} { from { transform: translateY(-${N}px); } to { transform: translateY(0); } }`;
-    }).join("\n");
     document.head.appendChild(styleEl);
 
-    // Wait one frame so Figma components have painted
-    const raf = requestAnimationFrame(() => {
-      const container4 = document.querySelector(
-        '[data-name="Mask Group"] > [data-name="Container"]'
-      ) as HTMLElement | null;
-      if (!container4) return;
+    // Two frames: one for layout to settle, one to measure final heights.
+    let raf2 = 0;
+    const raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => {
+        const track = document.querySelector(
+          '[data-name="Mask Group"] > [data-name="Container"]'
+        ) as HTMLElement | null;
+        if (!track) return;
 
-      const cols = Array.from(
-        container4.querySelectorAll(':scope > [data-name="Container"]')
-      ) as HTMLElement[];
-      if (cols.length < 3) return;
+        const cols = Array.from(
+          track.querySelectorAll(':scope > [data-name="Container"]')
+        ) as HTMLElement[];
+        if (cols.length < 3) return;
 
-      cols.slice(0, 3).forEach((colEl, i) => {
-        // Guard against double-init on hot reload
-        if (colEl.hasAttribute(MARKER)) return;
-        colEl.setAttribute(MARKER, "1");
+        let keyframes = "";
 
-        const { N, direction, duration } = COLS[i];
+        cols.slice(0, 3).forEach((colEl, i) => {
+          if (colEl.hasAttribute(MARKER)) return;
 
-        const originals = Array.from(colEl.children);
-        const fillCount = Math.max(originals.length, 6);
-        const fillItems = Array.from({ length: fillCount }, (_, index) =>
-          originals[index % originals.length]
-        );
+          const originals = Array.from(colEl.children) as HTMLElement[];
+          if (!originals.length) return;
 
-        [-N * 2, -N, N, N * 2, N * 3].forEach((offset) => {
-          const offsetWrapper = document.createElement("div");
-          offsetWrapper.setAttribute("data-hero-clone", "1");
-          offsetWrapper.style.cssText = `position:absolute;top:${offset}px;left:0;right:0;`;
-
-          fillItems.forEach((child) => {
-            offsetWrapper.appendChild(child.cloneNode(true));
+          // Measure the bounding box of the original stack.
+          let minTop = Infinity;
+          let maxBottom = -Infinity;
+          originals.forEach((el) => {
+            const top = el.offsetTop;
+            const bottom = top + el.offsetHeight;
+            if (top < minTop) minTop = top;
+            if (bottom > maxBottom) maxBottom = bottom;
           });
-          colEl.appendChild(offsetWrapper);
+
+          const period = Math.round(maxBottom - minTop);
+          if (!Number.isFinite(period) || period <= 0) return;
+
+          colEl.setAttribute(MARKER, "1");
+
+          // Stack identical copies above and below so the viewport is always
+          // filled while the column drifts a full period in either direction.
+          [-2, -1, 1, 2].forEach((mult) => {
+            const wrapper = document.createElement("div");
+            wrapper.setAttribute("data-hero-clone", "1");
+            wrapper.style.cssText = `position:absolute;top:${mult * period}px;left:0;right:0;`;
+            originals.forEach((child) => wrapper.appendChild(child.cloneNode(true)));
+            colEl.appendChild(wrapper);
+          });
+
+          const { direction, speed } = COLUMNS[i];
+          const name = `heroDrift${i}_${period}`;
+          const duration = Math.max(16, Math.round(period / speed));
+
+          keyframes +=
+            direction === "up"
+              ? `@keyframes ${name}{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,${-period}px,0)}}`
+              : `@keyframes ${name}{from{transform:translate3d(0,${-period}px,0)}to{transform:translate3d(0,0,0)}}`;
+
+          colEl.style.willChange = "transform";
+          colEl.style.animation = `${name} ${duration}s linear infinite`;
         });
 
-        // Apply the animation
-        const animName = `heroScroll${direction === "up" ? "Up" : "Down"}${N}`;
-        colEl.style.animation = `${animName} ${duration}s linear infinite`;
+        styleEl.textContent = keyframes;
       });
     });
 
     return () => {
-      cancelAnimationFrame(raf);
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
       styleEl.remove();
-      // Remove clones and reset animation on unmount
-      const container4 = document.querySelector(
+
+      const track = document.querySelector(
         '[data-name="Mask Group"] > [data-name="Container"]'
       );
-      container4?.querySelectorAll(`[${MARKER}]`).forEach((colEl) => {
+      track?.querySelectorAll(`[${MARKER}]`).forEach((colEl) => {
         const el = colEl as HTMLElement;
         el.removeAttribute(MARKER);
         el.style.animation = "";
+        el.style.willChange = "";
         el.querySelectorAll('[data-hero-clone="1"]').forEach((clone) => clone.remove());
       });
     };

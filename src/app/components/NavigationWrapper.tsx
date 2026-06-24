@@ -104,7 +104,9 @@ export function NavigationWrapper({ children }: NavigationWrapperProps) {
         } else if (text === 'privacy') {
           router.push('/privacy');
         } else if (text === 'faq' || text === 'faqs') {
-          router.push('/#faq');
+          router.push('/faq');
+        } else if (text === 'blog') {
+          router.push('/blog');
         } else {
           router.push('/');
         }
