@@ -170,22 +170,41 @@ body {
   width: 100% !important;
 }
 
-/* Center the products mega-menu content within a tidy, centered column. */
+/* Lay the products mega-menu out as a clean, centered column. The Figma export
+   positions the label and cards absolutely, which left them off-centre with
+   uneven spacing — switch the panel to normal flow and centre everything. */
+.nt-products-menu [data-name="Background"] {
+  align-items: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  padding: 40px 24px 48px !important;
+}
+
 .nt-products-menu [data-name="Section"] {
   border-left: 0 !important;
-  left: 50% !important;
-  right: auto !important;
-  transform: translateX(-50%);
-  width: min(1180px, calc(100% - 122px)) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  inset: auto !important;
+  margin: 0 auto !important;
+  max-width: 1120px !important;
+  position: static !important;
+  transform: none !important;
+  width: 100% !important;
 }
 
 .nt-products-menu [data-name="Section"] > [data-name="Container"] {
-  left: 0 !important;
-  right: 0 !important;
+  height: auto !important;
+  inset: auto !important;
+  position: static !important;
+  width: 100% !important;
 }
 
-/* The card row (last container) centers its three cards. */
+/* Card row: three equal cards, centered, with even spacing. */
 .nt-products-menu [data-name="Section"] > [data-name="Container"]:last-child {
+  display: flex !important;
+  gap: 28px !important;
   justify-content: center !important;
 }
 
