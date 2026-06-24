@@ -360,7 +360,12 @@ body {
 
 .nt-testimonial-marquee {
   max-width: min(1440px, calc(100vw - 32px));
+  /* Clip the horizontally-scrolling cards, but extend the clip region so the
+     cards' shadows and hover lift are fully visible (not cut off). The hidden
+     fallback keeps horizontal clipping on browsers without overflow: clip. */
   overflow: hidden !important;
+  overflow: clip !important;
+  overflow-clip-margin: 72px;
   width: 100% !important;
 }
 

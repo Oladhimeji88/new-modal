@@ -1,5 +1,6 @@
 import svgPaths from "./svg-ufm1dvs2im";
 import imgImage1 from "./5000c8a4382a2876cfc8b59f531fa7684d837897.png";
+import { PricingFaq } from "../../app/components/PricingFaq";
 
 function Logo() {
   return (
@@ -800,9 +801,9 @@ function Pricing() {
 
 function Frame26() {
   return (
-    <div className="[word-break:break-word] content-stretch flex gap-[12px] items-start justify-center relative shrink-0 text-[#0a211f] text-[54px] whitespace-nowrap" data-name="Frame">
+    <div className="[word-break:break-word] content-stretch flex gap-[12px] items-baseline justify-center relative shrink-0 text-[#0a211f] text-[54px] text-center w-full whitespace-nowrap" data-name="Frame">
       <p className="font-['Outfit:ExtraBold',sans-serif] leading-[55px] not-italic relative shrink-0 tracking-[-2.16px]">Common</p>
-      <p className="font-['Instrument_Serif:Italic',sans-serif] italic leading-[80px] relative shrink-0">Questions</p>
+      <p className="font-['Instrument_Serif:Italic',sans-serif] italic leading-[64px] relative shrink-0">Questions</p>
     </div>
   );
 }
@@ -939,7 +940,7 @@ function Frame25() {
     <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-[820px]" data-name="Frame">
       <p className="[word-break:break-word] font-['Outfit:SemiBold',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#3ebf0f] text-[14px] tracking-[2.4px] whitespace-nowrap">FAQ</p>
       <Frame26 />
-      <Frame27 />
+      <PricingFaq />
     </div>
   );
 }

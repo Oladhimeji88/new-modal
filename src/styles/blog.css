@@ -200,7 +200,7 @@
 
 .nt-blog-article {
   margin: 0 auto;
-  max-width: 720px;
+  max-width: 900px;
 }
 
 .nt-blog-back {
@@ -682,7 +682,7 @@
 .nt-story-tile-media,
 .nt-blog-tile-media {
   background: #0a211f;
-  border-radius: 18px;
+  border-radius: 10px;
   height: clamp(240px, 24vw, 360px);
   overflow: hidden;
   position: relative;
