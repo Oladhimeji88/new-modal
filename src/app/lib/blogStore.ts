@@ -17,7 +17,7 @@ export type BlogPost = {
   date: string; // ISO date string (yyyy-mm-dd)
 };
 
-const STORAGE_KEY = 'nativetalk_blog_posts_v1';
+const STORAGE_KEY = 'nativetalk_blog_posts_v2';
 export const BLOG_EVENT = 'nativetalk-blog-updated';
 
 const SEED: BlogPost[] = [
@@ -69,6 +69,54 @@ const SEED: BlogPost[] = [
     author: 'NativeTalk Team',
     category: 'AI',
     date: '2026-05-03',
+  },
+  {
+    id: 'seed-personal-line',
+    slug: 'one-app-personal-and-work-calls',
+    title: 'Keep work and personal calls on one app, not two phones',
+    excerpt:
+      'A separate business line should not mean a second phone. Here is how a virtual number keeps work and personal life cleanly apart on the device you already carry.',
+    body: [
+      'Carrying two phones — one for work, one for life — is a tax on your attention. Calls come in on the wrong device, personal numbers leak to customers, and after-hours work bleeds into everything.',
+      'A virtual business line solves this without extra hardware. Work calls ring inside the NativeTalk app, your personal number stays private, and you can set hours so the business line rests when you do.',
+      'For founders and small teams, this is the simplest path to looking professional while keeping a healthy boundary between work and life.',
+    ].join('\n'),
+    image: '/product/personal.png',
+    author: 'NativeTalk Team',
+    category: 'Guides',
+    date: '2026-04-18',
+  },
+  {
+    id: 'seed-call-center',
+    slug: 'stand-up-a-call-center-in-a-day',
+    title: 'How African teams stand up a call center in a single day',
+    excerpt:
+      'Setting up professional phone operations used to take weeks of hardware and wiring. Cloud call centers compress that to an afternoon.',
+    body: [
+      'Traditional call centers meant PBX hardware, wiring, and long setup cycles. For a growing African business, that cost and delay put professional phone operations out of reach.',
+      'Cloud call centers change the math. Numbers, routing, extensions, monitoring, and reporting are configured in software — so a team can be taking structured, supervised calls the same day it decides to.',
+      'The payoff is operational control: supervisors can monitor live calls for quality, route work to the right agents, and see exactly what is happening across the floor.',
+    ].join('\n'),
+    image: '/product/enterprise.png',
+    author: 'NativeTalk Team',
+    category: 'Enterprise',
+    date: '2026-04-02',
+  },
+  {
+    id: 'seed-customer-stories',
+    slug: 'what-great-customer-conversations-look-like',
+    title: 'What great customer conversations actually look like',
+    excerpt:
+      'The businesses customers love are not the ones with the most channels — they are the ones that make every conversation feel connected.',
+    body: [
+      'Customers do not care how many tools you run behind the scenes. They care whether the business remembers them, responds quickly, and follows through.',
+      'Great conversations share a pattern: the customer is recognized, context carries across calls and messages, and nothing has to be repeated. That consistency is what turns a one-time buyer into a loyal one.',
+      'Centralizing calls and messaging into one shared view is what makes that consistency possible at scale — across a whole team, not just one attentive person.',
+    ].join('\n'),
+    image: '/product/business-app.png',
+    author: 'NativeTalk Team',
+    category: 'Stories',
+    date: '2026-03-20',
   },
 ];
 

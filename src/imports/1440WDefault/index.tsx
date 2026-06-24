@@ -39,6 +39,7 @@ import imgContainer22 from "./243562a093cb0b6ffaa935bba0e4ba12bbbbbd35.png";
 import imgC20C5Feebed0E15106771D2261B36A0F53B6C2D44512X3238Webp1 from "./0f7115796cc105e015db7340f1c1ef95a4b4513d.png";
 import imgImage1 from "./5000c8a4382a2876cfc8b59f531fa7684d837897.png";
 import { imgContainer, imgContainer19, imgGroup, imgG3366, imgG3367, imgG3400, imgGroup1, imgGroup2, imgC20C5Feebed0E15106771D2261B36A0F53B6C2D44512X3238Webp } from "./svg-342b1";
+import { StoryBlog } from "../../app/components/StoryBlog";
 
 function Frame() {
   return (
@@ -2128,14 +2129,14 @@ function Container98() {
 
 function AstroIslandLink() {
   return (
-    <div className="relative rounded-[999px] self-stretch shrink-0" data-name="astro-island → Link">
+    <a className="nt-explore-blog relative rounded-[999px] self-stretch shrink-0 cursor-pointer no-underline" data-name="astro-island → Link" href="/blog">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col items-start px-[24.8px] py-[14.8px] relative size-full">
           <Container98 />
         </div>
       </div>
       <div aria-hidden className="absolute border border-[#0a211f] border-solid inset-0 pointer-events-none rounded-[999px]" />
-    </div>
+    </a>
   );
 }
 
@@ -2799,7 +2800,7 @@ function Container92() {
   return (
     <div className="content-stretch flex flex-col items-start max-w-[1216px] pb-[208px] pt-[88px] relative shrink-0 w-full" data-name="Container">
       <Container93 />
-      <AstroIsland6 />
+      <StoryBlog />
     </div>
   );
 }

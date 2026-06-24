@@ -12,18 +12,39 @@ import {
   type BlogPost,
 } from '../lib/blogStore';
 
-function Cover({ post, className }: { post: BlogPost; className?: string }) {
-  if (post.image) {
-    return (
-      <div className={`nt-blog-cover ${className ?? ''}`}>
-        <img src={post.image} alt={post.title} />
-      </div>
-    );
-  }
+function BlogCard({
+  post,
+  featured,
+  onOpen,
+}: {
+  post: BlogPost;
+  featured?: boolean;
+  onOpen: (slug: string) => void;
+}) {
   return (
-    <div className={`nt-blog-cover nt-blog-cover-empty ${className ?? ''}`} aria-hidden>
-      <span>{post.category}</span>
-    </div>
+    <article
+      className={`nt-blog-card ${featured ? 'is-featured' : ''}`}
+      role="link"
+      tabIndex={0}
+      onClick={() => onOpen(post.slug)}
+      onKeyDown={(e) => e.key === 'Enter' && onOpen(post.slug)}
+    >
+      <div className="nt-blog-card-media">
+        {post.image ? (
+          <img src={post.image} alt={post.title} />
+        ) : (
+          <span className="nt-blog-card-fallback">{post.category}</span>
+        )}
+      </div>
+      <div className="nt-blog-card-overlay">
+        <span className="nt-blog-card-cat">{post.category}</span>
+        <h3 className="nt-blog-card-title">{post.title}</h3>
+        {featured ? <p className="nt-blog-card-excerpt">{post.excerpt}</p> : null}
+        <span className="nt-blog-card-meta">
+          {post.author} · {formatDate(post.date)} · {readingTime(post.body)} min read
+        </span>
+      </div>
+    </article>
   );
 }
 
@@ -44,9 +65,6 @@ export function BlogListing() {
 
   const open = (slug: string) => router.push(`/blog/${slug}`);
 
-  const featured = posts?.[0];
-  const rest = posts?.slice(1) ?? [];
-
   return (
     <NavigationWrapper>
       <ScrollToTop />
@@ -65,53 +83,11 @@ export function BlogListing() {
         ) : posts.length === 0 ? (
           <p className="nt-blog-loading">No articles yet. Check back soon.</p>
         ) : (
-          <>
-            {featured && (
-              <article
-                className="nt-blog-featured"
-                onClick={() => open(featured.slug)}
-                role="link"
-                tabIndex={0}
-                onKeyDown={(e) => e.key === 'Enter' && open(featured.slug)}
-              >
-                <Cover post={featured} className="nt-blog-featured-cover" />
-                <div className="nt-blog-featured-body">
-                  <span className="nt-blog-tag">{featured.category}</span>
-                  <h2>{featured.title}</h2>
-                  <p className="nt-blog-excerpt">{featured.excerpt}</p>
-                  <p className="nt-blog-meta">
-                    {featured.author} · {formatDate(featured.date)} ·{' '}
-                    {readingTime(featured.body)} min read
-                  </p>
-                </div>
-              </article>
-            )}
-
-            {rest.length > 0 && (
-              <section className="nt-blog-list" aria-label="All articles">
-                {rest.map((post) => (
-                  <article
-                    key={post.id}
-                    className="nt-blog-row"
-                    onClick={() => open(post.slug)}
-                    role="link"
-                    tabIndex={0}
-                    onKeyDown={(e) => e.key === 'Enter' && open(post.slug)}
-                  >
-                    <div className="nt-blog-row-text">
-                      <span className="nt-blog-tag">{post.category}</span>
-                      <h3>{post.title}</h3>
-                      <p className="nt-blog-excerpt">{post.excerpt}</p>
-                      <p className="nt-blog-meta">
-                        {post.author} · {formatDate(post.date)} · {readingTime(post.body)} min read
-                      </p>
-                    </div>
-                    <Cover post={post} className="nt-blog-row-cover" />
-                  </article>
-                ))}
-              </section>
-            )}
-          </>
+          <section className="nt-blog-grid" aria-label="All articles">
+            {posts.map((post, i) => (
+              <BlogCard key={post.id} post={post} featured={i === 0} onOpen={open} />
+            ))}
+          </section>
         )}
       </main>
     </NavigationWrapper>

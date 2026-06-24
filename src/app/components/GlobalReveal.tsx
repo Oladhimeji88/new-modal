@@ -18,8 +18,7 @@ const TARGETS = [
   '.nt-legal-section',
   // Blog
   '.nt-blog-masthead > *',
-  '.nt-blog-featured',
-  '.nt-blog-row',
+  '.nt-blog-card',
   '.nt-blog-article > *',
   '.nt-blog-related-card',
   // FAQ
