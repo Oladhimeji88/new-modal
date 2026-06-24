@@ -27,6 +27,13 @@ export default function BusinessAppPage() {
         { name: "Enterprise", price: "Custom Pricing", details: "For 20+ users, custom scope, integrations, and negotiated rollout.", cta: "Contact Sales" },
       ]}
       note="Billing can support Monthly, Quarterly, Biannual, and Annual terms. Biannual and Annual discounts are planned for self-serve plans."
+      gallery={[
+        "/product/personal/Container.png",
+        "/product/personal/Container-1.png",
+        "/product/personal/Container-2.png",
+        "/product/personal/Container-3.png",
+        "/product/personal/Container-4.png",
+      ]}
     />
   );
 }

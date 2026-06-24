@@ -20,6 +20,7 @@ type ProductLandingPageProps = {
   bullets: string[];
   plans: Plan[];
   note?: string;
+  gallery?: string[];
 };
 
 export function ProductLandingPage({
@@ -31,6 +32,7 @@ export function ProductLandingPage({
   bullets,
   plans,
   note,
+  gallery,
 }: ProductLandingPageProps) {
   return (
     <NavigationWrapper>
@@ -60,6 +62,21 @@ export function ProductLandingPage({
             </article>
           ))}
         </section>
+
+        {gallery && gallery.length > 0 ? (
+          <section className="nt-product-gallery" aria-label={`${label} gallery`}>
+            <p className="nt-product-label">A closer look</p>
+            <div className="nt-product-gallery-viewport">
+              <div className="nt-product-gallery-track">
+                {[...gallery, ...gallery].map((src, i) => (
+                  <div className="nt-product-gallery-item" key={`${src}-${i}`}>
+                    <img src={src} alt="" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className="nt-product-pricing" aria-label={`${label} pricing`}>
           <div>
