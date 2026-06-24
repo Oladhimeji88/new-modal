@@ -74,9 +74,9 @@ export function NavigationWrapper({ children }: NavigationWrapperProps) {
         } else if (text === 'personal') {
           router.push('/personal');
         } else if (text === 'business' || text === 'nativetalk business') {
-          router.push('/personal');
+          router.push('/business-app');
         } else if (text === 'crm' || text === 'nativetalk crm') {
-          router.push('/enterprise');
+          router.push('/crm');
         } else if (text === 'voip' || text === 'nativetalk voip') {
           router.push('/voip');
         } else if (text === 'enterprise') {

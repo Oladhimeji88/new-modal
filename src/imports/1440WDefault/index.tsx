@@ -97,7 +97,7 @@ function Svg() {
 
 function Link() {
   return (
-    <div className="bg-[#3ebf0f] h-full relative rounded-[9999px] shrink-0" data-name="Link">
+    <a className="bg-[#3ebf0f] h-full relative rounded-[9999px] shrink-0 cursor-pointer no-underline" data-name="Link" href="/about">
       <div aria-hidden className="absolute border border-[rgba(0,0,0,0)] border-solid inset-0 pointer-events-none rounded-[9999px]" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8px] items-center px-[22.8px] py-[13.8px] relative size-full">
@@ -107,13 +107,13 @@ function Link() {
           <Svg />
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
 function Link1() {
   return (
-    <div className="h-full relative rounded-[9999px] shrink-0" data-name="Link">
+    <a className="h-full relative rounded-[9999px] shrink-0 cursor-pointer no-underline" data-name="Link" href="/pricing">
       <div aria-hidden className="absolute border border-[rgba(255,255,255,0.3)] border-solid inset-0 pointer-events-none rounded-[9999px]" />
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center px-[22.8px] py-[13.8px] relative size-full">
@@ -122,7 +122,7 @@ function Link1() {
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -1236,13 +1236,13 @@ function Svg11() {
 
 function Link2() {
   return (
-    <div className="content-stretch flex gap-[8px] items-center px-[22.8px] py-[13.8px] relative rounded-[9999px] shrink-0" data-name="Link">
+    <a className="content-stretch flex gap-[8px] items-center px-[22.8px] py-[13.8px] relative rounded-[9999px] shrink-0 cursor-pointer no-underline" data-name="Link" href="/personal">
       <div aria-hidden className="absolute border border-[rgba(16,58,44,0.25)] border-solid inset-0 pointer-events-none rounded-[9999px]" />
       <div className="[word-break:break-word] flex flex-col font-['Outfit:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#103a2c] text-[15px] whitespace-nowrap">
         <p className="leading-[22.5px]">Learn more</p>
       </div>
       <Svg11 />
-    </div>
+    </a>
   );
 }
 
@@ -1542,13 +1542,13 @@ function Svg12() {
 
 function Link3() {
   return (
-    <div className="content-stretch flex gap-[8px] items-center px-[22.8px] py-[13.8px] relative rounded-[9999px] shrink-0" data-name="Link">
+    <a className="content-stretch flex gap-[8px] items-center px-[22.8px] py-[13.8px] relative rounded-[9999px] shrink-0 cursor-pointer no-underline" data-name="Link" href="/enterprise">
       <div aria-hidden className="absolute border border-[rgba(16,58,44,0.25)] border-solid inset-0 pointer-events-none rounded-[9999px]" />
       <div className="[word-break:break-word] flex flex-col font-['Outfit:SemiBold',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#103a2c] text-[15px] whitespace-nowrap">
         <p className="leading-[22.5px]">Learn more</p>
       </div>
       <Svg12 />
-    </div>
+    </a>
   );
 }
 
@@ -4683,7 +4683,7 @@ function Container247() {
 
 function Section12() {
   return (
-    <div className="content-stretch flex flex-col gap-[35.99px] items-center max-w-[1240px] pb-[40px] pt-[112px] px-[28px] relative shrink-0 w-[1240px]" data-name="Section">
+    <div className="content-stretch flex flex-col gap-[35.99px] items-center max-w-[1240px] pb-[40px] pt-[112px] px-[28px] relative shrink-0 scroll-mt-[96px] w-[1240px]" data-name="Section" id="faq">
       <Container245 />
       <Container247 />
     </div>
@@ -4757,7 +4757,7 @@ function Svg22() {
 
 function Link4() {
   return (
-    <div className="bg-[#3ebf0f] relative rounded-[9999px] self-stretch shrink-0" data-name="Link">
+    <a className="bg-[#3ebf0f] relative rounded-[9999px] self-stretch shrink-0 cursor-pointer no-underline" data-name="Link" href="/pricing">
       <div aria-hidden className="absolute border border-[rgba(0,0,0,0)] border-solid inset-0 pointer-events-none rounded-[9999px]" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8px] items-center px-[22.8px] py-[13.8px] relative size-full">
@@ -4767,13 +4767,13 @@ function Link4() {
           <Svg22 />
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
 function Link5() {
   return (
-    <div className="relative rounded-[9999px] self-stretch shrink-0" data-name="Link">
+    <a className="relative rounded-[9999px] self-stretch shrink-0 cursor-pointer no-underline" data-name="Link" href="/contact">
       <div aria-hidden className="absolute border border-[rgba(255,255,255,0.25)] border-solid inset-0 pointer-events-none rounded-[9999px]" />
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center px-[22.8px] py-[13.8px] relative size-full">
@@ -4782,7 +4782,7 @@ function Link5() {
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -4839,9 +4839,9 @@ function NativeTalk() {
 
 function LinkNativeTalkHome() {
   return (
-    <div className="content-stretch flex items-center relative shrink-0" data-name="Link - NativeTalk home">
+    <a className="content-stretch flex items-center relative shrink-0 cursor-pointer no-underline" data-name="Link - NativeTalk home" href="/">
       <NativeTalk />
-    </div>
+    </a>
   );
 }
 
@@ -4934,31 +4934,31 @@ function Heading14() {
 
 function Link6() {
   return (
-    <div className="content-stretch flex flex-col items-start pb-[6px] pt-[21px] relative shrink-0 w-full" data-name="Link">
+    <a className="content-stretch flex flex-col items-start pb-[6px] pt-[21px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link" href="/business-app">
       <div className="[word-break:break-word] flex flex-col font-['Outfit:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#9cb4a7] text-[14.5px] w-full">
         <p className="leading-[21.75px]">Business</p>
       </div>
-    </div>
+    </a>
   );
 }
 
 function Link7() {
   return (
-    <div className="content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full" data-name="Link">
+    <a className="content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link" href="/crm">
       <div className="[word-break:break-word] flex flex-col font-['Outfit:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#9cb4a7] text-[14.5px] w-full">
         <p className="leading-[21.75px]">CRM</p>
       </div>
-    </div>
+    </a>
   );
 }
 
 function Link8() {
   return (
-    <div className="content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full" data-name="Link">
+    <a className="content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link" href="/voip">
       <div className="[word-break:break-word] flex flex-col font-['Outfit:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#9cb4a7] text-[14.5px] w-full">
         <p className="leading-[21.75px]">VoIP</p>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -4987,21 +4987,21 @@ function Heading15() {
 
 function Link9() {
   return (
-    <div className="content-stretch flex flex-col items-start pb-[6px] pt-[21px] relative shrink-0 w-full" data-name="Link">
+    <a className="content-stretch flex flex-col items-start pb-[6px] pt-[21px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link" href="/about">
       <div className="[word-break:break-word] flex flex-col font-['Outfit:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#9cb4a7] text-[14.5px] w-full">
         <p className="leading-[21.75px]">About Us</p>
       </div>
-    </div>
+    </a>
   );
 }
 
 function Link10() {
   return (
-    <div className="content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full" data-name="Link">
+    <a className="content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link" href="/contact">
       <div className="[word-break:break-word] flex flex-col font-['Outfit:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#9cb4a7] text-[14.5px] w-full">
         <p className="leading-[21.75px]">Contact</p>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -5040,21 +5040,21 @@ function Heading16() {
 
 function Link12() {
   return (
-    <div className="content-stretch flex flex-col items-start pb-[6px] pt-[21px] relative shrink-0 w-full" data-name="Link">
+    <a className="content-stretch flex flex-col items-start pb-[6px] pt-[21px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link" href="/pricing">
       <div className="[word-break:break-word] flex flex-col font-['Outfit:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#9cb4a7] text-[14.5px] w-full">
         <p className="leading-[21.75px]">Pricing</p>
       </div>
-    </div>
+    </a>
   );
 }
 
 function Link13() {
   return (
-    <div className="content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full" data-name="Link">
+    <a className="content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link" href="/#faq">
       <div className="[word-break:break-word] flex flex-col font-['Outfit:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#9cb4a7] text-[14.5px] w-full">
         <p className="leading-[21.75px]">FAQs</p>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -5070,21 +5070,21 @@ function Link14() {
 
 function Link15() {
   return (
-    <div className="content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full" data-name="Link">
+    <a className="content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link" href="/terms">
       <div className="[word-break:break-word] flex flex-col font-['Outfit:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#9cb4a7] text-[14.5px] w-full">
         <p className="leading-[21.75px]">Terms</p>
       </div>
-    </div>
+    </a>
   );
 }
 
 function Link16() {
   return (
-    <div className="content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full" data-name="Link">
+    <a className="content-stretch flex flex-col items-start py-[6px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link" href="/privacy">
       <div className="[word-break:break-word] flex flex-col font-['Outfit:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#9cb4a7] text-[14.5px] w-full">
         <p className="leading-[21.75px]">Privacy</p>
       </div>
-    </div>
+    </a>
   );
 }
 

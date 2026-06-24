@@ -81,15 +81,15 @@ function NavLinks() {
 
 function DownloadButton() {
   return (
-    <button
-      className="nt-header-cta bg-[#3ebf0f] content-stretch flex items-center px-[24px] py-[14px] relative rounded-[999px] shrink-0 cursor-pointer"
+    <a
+      className="nt-header-cta bg-[#3ebf0f] content-stretch flex items-center px-[24px] py-[14px] relative rounded-[999px] shrink-0 cursor-pointer no-underline"
       data-name="Button"
-      type="button"
+      href="/personal"
     >
       <p className="[word-break:break-word] font-['Outfit:SemiBold',sans-serif] leading-[normal] not-italic relative shrink-0 text-[15px] text-white whitespace-nowrap">
         Download App
       </p>
-    </button>
+    </a>
   );
 }
 
