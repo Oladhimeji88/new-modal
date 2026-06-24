@@ -4,7 +4,7 @@
    ========================================================================== */
 
 .nt-blog-page {
-  background: #ffffff;
+  background: transparent;
   color: #0a211f;
   min-height: 100vh;
   margin: 0 auto;
@@ -749,24 +749,18 @@
 }
 
 /* ---------------------------------------------------------------------------
-   Blog index grid — same tile language as the homepage story section
+   Blog index grid — 3 equal cards per row, square images, standard spacing.
    ------------------------------------------------------------------------- */
 .nt-blog-grid {
   display: grid;
-  gap: 36px 28px;
+  gap: 28px;
   grid-template-columns: repeat(3, 1fr);
 }
 
-.nt-blog-tile.is-lead {
-  grid-column: span 2;
-}
-
-.nt-blog-tile.is-lead .nt-blog-tile-media {
-  height: clamp(300px, 30vw, 420px);
-}
-
-.nt-blog-tile.is-lead .nt-blog-tile-title {
-  font-size: clamp(1.9rem, 2.8vw, 2.6rem);
+/* Blog cover images are always square (equal width and height). */
+.nt-blog-tile-media {
+  aspect-ratio: 1 / 1;
+  height: auto;
 }
 
 /* ---------------------------------------------------------------------------

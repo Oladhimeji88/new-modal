@@ -80,8 +80,8 @@ export function BlogListing() {
           <p className="nt-blog-loading">No articles yet. Check back soon.</p>
         ) : (
           <section className="nt-blog-grid" aria-label="All articles">
-            {posts.map((post, i) => (
-              <BlogTile key={post.id} post={post} lead={i === 0} onOpen={open} />
+            {posts.map((post) => (
+              <BlogTile key={post.id} post={post} onOpen={open} />
             ))}
           </section>
         )}
