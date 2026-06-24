@@ -13,6 +13,7 @@ export default function CrmPage() {
         src: "/ZenBook Duo 16.png",
         alt: "NativeTalk CRM customer conversation workspace",
       }}
+      imageFit="contain"
       bullets={[
         "Customer conversation history in one workspace",
         "Lead and support pipeline visibility",

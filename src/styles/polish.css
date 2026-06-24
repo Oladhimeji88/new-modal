@@ -755,6 +755,27 @@ body {
   width: 100%;
 }
 
+/* Contain mode: show the full image (no crop, no frame) */
+.nt-product-hero-media--contain {
+  aspect-ratio: auto;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  max-height: none;
+  overflow: visible;
+}
+
+.nt-product-hero-media--contain::after {
+  display: none;
+}
+
+.nt-product-hero-media--contain img {
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+  width: 100%;
+}
+
 .nt-legal-eyebrow,
 .nt-product-label {
   color: #87ff5c;

@@ -57,6 +57,7 @@ type ProductLandingPageProps = {
   plans: Plan[];
   note?: string;
   gallery?: string[];
+  imageFit?: "cover" | "contain";
 };
 
 export function ProductLandingPage({
@@ -69,6 +70,7 @@ export function ProductLandingPage({
   plans,
   note,
   gallery,
+  imageFit = "cover",
 }: ProductLandingPageProps) {
   return (
     <NavigationWrapper>
@@ -85,7 +87,11 @@ export function ProductLandingPage({
               <a href="/contact">Talk to sales</a>
             </div>
           </div>
-          <div className="nt-product-hero-media nt-reveal-image">
+          <div
+            className={`nt-product-hero-media nt-reveal-image${
+              imageFit === "contain" ? " nt-product-hero-media--contain" : ""
+            }`}
+          >
             <img src={image.src} alt={image.alt} />
           </div>
         </section>
