@@ -786,6 +786,14 @@ body {
   max-width: 840px;
 }
 
+/* Reduce the oversized hero headings on interior pages (About, Contact,
+   Pricing). The landing page hero uses text-[64px], so it is untouched. */
+.nt-page-content [class*="text-[80px]"],
+.nt-page-content [class*="text-[76px]"] {
+  font-size: clamp(2.4rem, 5vw, 3.6rem) !important;
+  line-height: 1.05 !important;
+}
+
 .nt-legal-updated {
   color: rgba(255, 255, 255, 0.68);
   margin: 22px 0 0;
