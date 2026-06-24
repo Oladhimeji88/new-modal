@@ -6,6 +6,7 @@ import { ProductsDropdown } from './ProductsDropdown';
 import { SharedHeader } from './SharedHeader';
 import { SharedFooter } from './SharedFooter';
 import { GlobalUiEffects } from './GlobalUiEffects';
+import { GlobalReveal } from './GlobalReveal';
 
 interface NavigationWrapperProps {
   children: React.ReactNode;
@@ -156,6 +157,7 @@ export function NavigationWrapper({ children }: NavigationWrapperProps) {
       <SharedHeader />
       <ProductsDropdown />
       <GlobalUiEffects />
+      <GlobalReveal />
       <div className="nt-page-content flex-1">
         {children}
       </div>
