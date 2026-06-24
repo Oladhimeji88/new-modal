@@ -243,11 +243,28 @@ function Frame18() {
   );
 }
 
+function StoryImages() {
+  return (
+    <div className="nt-about-images" data-name="StoryImages">
+      <div className="nt-about-image nt-about-image-wide">
+        <img src="/testimonials/nigerian-founder.png" alt="A NativeTalk business owner" />
+      </div>
+      <div className="nt-about-image">
+        <img src="/product/business-app.png" alt="The NativeTalk business app" />
+      </div>
+      <div className="nt-about-image">
+        <img src="/testimonials/nigerian-operations.png" alt="A NativeTalk operations lead" />
+      </div>
+    </div>
+  );
+}
+
 function Frame15() {
   return (
     <div className="bg-[#f7f9f2] content-stretch flex flex-col gap-[56px] items-center px-[112px] py-[128px] relative shrink-0 w-[1440px]" data-name="Frame">
       <Frame16 />
       <Frame18 />
+      <StoryImages />
     </div>
   );
 }
