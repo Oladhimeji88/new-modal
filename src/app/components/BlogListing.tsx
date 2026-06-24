@@ -12,39 +12,35 @@ import {
   type BlogPost,
 } from '../lib/blogStore';
 
-function BlogCard({
+function BlogTile({
   post,
-  featured,
+  lead,
   onOpen,
 }: {
   post: BlogPost;
-  featured?: boolean;
+  lead?: boolean;
   onOpen: (slug: string) => void;
 }) {
   return (
-    <article
-      className={`nt-blog-card ${featured ? 'is-featured' : ''}`}
-      role="link"
-      tabIndex={0}
+    <button
+      type="button"
+      className={`nt-blog-tile ${lead ? 'is-lead' : ''}`}
+      aria-label={post.title}
       onClick={() => onOpen(post.slug)}
-      onKeyDown={(e) => e.key === 'Enter' && onOpen(post.slug)}
     >
-      <div className="nt-blog-card-media">
+      <div className="nt-blog-tile-media">
         {post.image ? (
           <img src={post.image} alt={post.title} />
         ) : (
-          <span className="nt-blog-card-fallback">{post.category}</span>
+          <span className="nt-blog-tile-fallback">{post.category}</span>
         )}
       </div>
-      <div className="nt-blog-card-overlay">
-        <span className="nt-blog-card-cat">{post.category}</span>
-        <h3 className="nt-blog-card-title">{post.title}</h3>
-        {featured ? <p className="nt-blog-card-excerpt">{post.excerpt}</p> : null}
-        <span className="nt-blog-card-meta">
-          {post.author} · {formatDate(post.date)} · {readingTime(post.body)} min read
-        </span>
-      </div>
-    </article>
+      <h3 className="nt-blog-tile-title">{post.title}</h3>
+      <p className="nt-blog-tile-cat">{post.category}</p>
+      <p className="nt-blog-tile-meta">
+        {post.author} · {formatDate(post.date)} · {readingTime(post.body)} min read
+      </p>
+    </button>
   );
 }
 
@@ -85,7 +81,7 @@ export function BlogListing() {
         ) : (
           <section className="nt-blog-grid" aria-label="All articles">
             {posts.map((post, i) => (
-              <BlogCard key={post.id} post={post} featured={i === 0} onOpen={open} />
+              <BlogTile key={post.id} post={post} lead={i === 0} onOpen={open} />
             ))}
           </section>
         )}
