@@ -255,11 +255,11 @@ body {
 }
 
 .nt-tm-row-a {
-  animation: nt-tm-scroll 64s linear infinite;
+  animation: nt-tm-scroll 32s linear infinite;
 }
 
 .nt-tm-row-b {
-  animation: nt-tm-scroll-rev 72s linear infinite;
+  animation: nt-tm-scroll-rev 36s linear infinite;
 }
 
 .nt-tm:hover .nt-tm-row {
