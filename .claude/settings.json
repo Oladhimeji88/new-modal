@@ -7,7 +7,8 @@
       "Bash(ls public/)",
       "Bash(ls public/product/)",
       "Bash(ls src/app/lib/)",
-      "Bash(\"/c/Program Files/nodejs/node.exe\" node_modules/next/dist/bin/next dev -p 3000)"
+      "Bash(\"/c/Program Files/nodejs/node.exe\" node_modules/next/dist/bin/next dev -p 3000)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000/about\" -UseBasicParsing -TimeoutSec 12; \"about -> $\\($r.StatusCode\\)\"; \"value-card class: $\\($r.Content -match 'nt-value-card'\\)\"; \"value-icon class: $\\($r.Content -match 'nt-value-icon'\\)\"; \"old dot removed \\(Ellipse should be False\\): $\\($r.Content -match 'data-name=\\\\\"Ellipse\\\\\"'\\)\" } catch { \"about -> ERR $\\($_.Exception.Message\\)\" })"
     ]
   }
 }
