@@ -1611,7 +1611,7 @@ function Container76() {
 
 function Frame12() {
   return (
-    <div className="content-stretch flex gap-[17px] items-center relative shrink-0 tracking-[0.1px] w-full">
+    <div className="content-stretch flex gap-[17px] items-center justify-center relative shrink-0 tracking-[0.1px] w-full">
       <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center not-italic relative shrink-0 text-[46.3px] text-center whitespace-nowrap">
         <p className="leading-[56px]">Explore our other</p>
       </div>
@@ -1882,7 +1882,7 @@ function AstroIsland4() {
 
 function Container77() {
   return (
-    <div className="absolute content-stretch flex flex-col items-start left-[-112px] top-0 w-[1440px]" data-name="Container">
+    <div className="relative content-stretch flex flex-col items-center top-0 w-full" data-name="Container">
       <AstroIsland4 />
     </div>
   );
@@ -1908,7 +1908,7 @@ function Container73() {
 function Container72() {
   return (
     <div className="max-w-[1920px] relative shrink-0 w-full" data-name="Container">
-      <div className="content-stretch flex flex-col items-start max-w-[inherit] px-[112px] relative size-full">
+      <div className="content-stretch flex flex-col items-center max-w-[inherit] px-[112px] relative size-full">
         <Container73 />
       </div>
     </div>

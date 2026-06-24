@@ -763,9 +763,11 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* Blog cover images are always square (equal width and height). */
+/* Blog cover images are always square (equal width and height) with a small
+   border radius. */
 .nt-blog-tile-media {
   aspect-ratio: 1 / 1;
+  border-radius: 8px;
   height: auto;
 }
 
