@@ -93,9 +93,59 @@ function DownloadButton() {
   );
 }
 
+const MOBILE_LINKS: { label: string; nav: string }[] = [
+  { label: "Personal", nav: "personal" },
+  { label: "Business", nav: "business" },
+  { label: "CRM", nav: "crm" },
+  { label: "VoIP", nav: "voip" },
+  { label: "Enterprise", nav: "enterprise" },
+  { label: "About us", nav: "about us" },
+  { label: "Blog", nav: "blog" },
+  { label: "Contact us", nav: "contact us" },
+  { label: "Pricing", nav: "pricing" },
+  { label: "FAQ", nav: "faq" },
+];
+
+function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
+  return (
+    <div
+      className={`nt-mobile-menu ${open ? "is-open" : ""}`}
+      aria-hidden={open ? "false" : "true"}
+      data-name="MobileMenu"
+    >
+      <button
+        aria-label="Close menu"
+        className="nt-mobile-menu-close"
+        onClick={onClose}
+        type="button"
+      >
+        <svg fill="none" height="22" viewBox="0 0 22 22" width="22">
+          <path d="M5 5L17 17M17 5L5 17" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" />
+        </svg>
+      </button>
+      <nav className="nt-mobile-menu-links" onClick={onClose}>
+        {MOBILE_LINKS.map((link) => (
+          <button
+            className="nt-mobile-menu-link"
+            data-nav={link.nav}
+            key={link.label}
+            type="button"
+          >
+            {link.label}
+          </button>
+        ))}
+      </nav>
+      <a className="nt-mobile-menu-cta" href="/personal" onClick={onClose}>
+        Download App
+      </a>
+    </div>
+  );
+}
+
 export function SharedHeader() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const solid = pathname !== "/" || scrolled;
 
   useEffect(() => {
@@ -105,6 +155,19 @@ export function SharedHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close the mobile menu whenever the route changes.
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  // Lock body scroll while the mobile menu is open.
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
     <div
       className={`nt-shared-header ${solid ? "is-scrolled" : ""} content-stretch flex h-[80px] items-center justify-between px-[112px] relative shrink-0 w-full z-40`}
@@ -112,7 +175,21 @@ export function SharedHeader() {
     >
       <Logo />
       <NavLinks />
-      <DownloadButton />
+      <div className="nt-header-actions content-stretch flex items-center gap-[16px]">
+        <DownloadButton />
+        <button
+          aria-expanded={menuOpen ? "true" : "false"}
+          aria-label="Open menu"
+          className="nt-mobile-toggle"
+          onClick={() => setMenuOpen((v) => !v)}
+          type="button"
+        >
+          <svg fill="none" height="22" viewBox="0 0 24 24" width="22">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeLinecap="round" strokeWidth="1.9" />
+          </svg>
+        </button>
+      </div>
+      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
     </div>
   );
 }

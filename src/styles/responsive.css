@@ -1,0 +1,370 @@
+/* ============================================================================
+   Responsive / adaptive layer for the Figma-exported screens.
+   Loaded last so it overrides globals.css and polish.css.
+   Breakpoints: <=1280 large, <=1024 tablet, <=860 landscape phone / small
+   tablet, <=640 phone, <=480 small phone.
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   Header actions + mobile navigation menu
+   ------------------------------------------------------------------------- */
+.nt-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nt-mobile-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.nt-mobile-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.nt-mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  padding: 92px 28px 40px;
+  background:
+    radial-gradient(circle at 20% 12%, rgba(135, 255, 92, 0.16), transparent 42%),
+    linear-gradient(180deg, #071412 0%, #0a211f 55%, #103a2c 100%);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.26s ease, transform 0.26s ease, visibility 0s linear 0.26s;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.nt-mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.26s ease, transform 0.26s ease, visibility 0s;
+}
+
+.nt-mobile-menu-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.nt-mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 8px;
+}
+
+.nt-mobile-menu-link {
+  width: 100%;
+  padding: 16px 4px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  color: #f7f9f2;
+  font-family: var(--font-body);
+  font-size: 21px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: color 160ms ease, padding-left 160ms ease;
+}
+
+.nt-mobile-menu-link:hover,
+.nt-mobile-menu-link:active {
+  color: #87ff5c;
+  padding-left: 10px;
+}
+
+.nt-mobile-menu-cta {
+  margin-top: 26px;
+  padding: 16px 22px;
+  border-radius: 999px;
+  background: #3ebf0f;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Keep the overlay out of the DOM flow on desktop. */
+@media (min-width: 861px) {
+  .nt-mobile-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .nt-mobile-toggle {
+    display: inline-flex;
+  }
+}
+
+/* On the smallest screens, fold the inline CTA into the menu only. */
+@media (max-width: 480px) {
+  .nt-header-actions .nt-header-cta {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Generic fixed-width neutralisation for page content
+   (Figma exports hard-code container widths that overflow small viewports.)
+   ------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .nt-page-content [class*="w-[1440px]"],
+  .nt-page-content [class*="w-[1240px]"],
+  .nt-page-content [class*="w-[1216px]"],
+  .nt-page-content [class*="w-[1184px]"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Trim the oversized horizontal gutters used across every section. */
+  .nt-page-content [class*="px-[112px]"] {
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+  }
+
+  .nt-page-content [class*="px-[54px]"] {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
+  .nt-page-content [class*="w-[866.087px]"],
+  .nt-page-content [class*="w-[820px]"],
+  .nt-page-content [class*="w-[800px]"],
+  .nt-page-content [class*="w-[770px]"],
+  .nt-page-content [class*="w-[720px]"],
+  .nt-page-content [class*="w-[600px]"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .nt-page-content [class*="min-w-[720px]"] {
+    min-width: 0 !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .nt-page-content [class*="px-[112px]"] {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .nt-page-content [class*="px-[54px]"] {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  /* Tame very tall vertical rhythm on phones. */
+  .nt-page-content [class*="py-[160px]"] {
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
+  }
+
+  .nt-page-content [class*="py-[120px]"] {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  .nt-page-content [class*="pt-[160px]"] {
+    padding-top: 120px !important;
+  }
+
+  .nt-page-content [class*="w-[560px]"],
+  .nt-page-content [class*="w-[532px]"],
+  .nt-page-content [class*="w-[492px]"],
+  .nt-page-content [class*="w-[440px]"],
+  .nt-page-content [class*="w-[338"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Shorten fixed-height media blocks so they don't dominate the viewport. */
+  .nt-page-content [class*="h-[576px]"] {
+    height: auto !important;
+    min-height: 320px !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Stack the multi-column flex rows that Figma laid out side-by-side
+   ------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  /* Two-column "media + copy" rows on the home page. */
+  .nt-page-content [class*="gap-[64px]"] {
+    flex-direction: column !important;
+    gap: 36px !important;
+  }
+
+  /* Stats band on the home page. */
+  .nt-page-content [data-name="Section"][class*="w-[1184px]"],
+  .nt-page-content [class*="w-[1184px]"][class*="gap-[30px]"] {
+    flex-direction: column !important;
+    gap: 28px !important;
+    align-items: stretch !important;
+  }
+
+  /* Contact: 3 info cards. */
+  [data-name="Contact-Cards"] [class*="gap-[32px]"] {
+    flex-direction: column !important;
+  }
+
+  /* Contact: form + office-info two-column block. */
+  [data-name="Form-Section"] {
+    flex-direction: column !important;
+    gap: 40px !important;
+  }
+
+  /* Contact: name + email side-by-side inputs. */
+  [data-name="Form-Section"] [class*="gap-[24px]"]:not([class*="flex-col"]) {
+    flex-direction: column !important;
+  }
+
+  /* Pricing: 3 plan cards. */
+  [data-name="Pricing"] [class*="h-[688px]"] {
+    flex-direction: column !important;
+    height: auto !important;
+    gap: 24px !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Home page FAQ accordion (raw Figma markup, no helper class)
+   ------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  #faq {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 860px) {
+  /* The expand/collapse toggle is absolutely pinned at left-[786px]; pull it
+     back to the right edge of each row so it stays on screen. */
+  #faq [class*="left-[786px]"] {
+    left: auto !important;
+    right: 0 !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Large display headings — scale down + allow wrapping on phones
+   ------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .nt-page-content [class*="text-[80px]"],
+  .nt-page-content [class*="text-[76px]"],
+  .nt-page-content [class*="text-[64px]"],
+  .nt-page-content [class*="text-[60px]"],
+  .nt-page-content [class*="text-[56px]"],
+  .nt-page-content [class*="text-[54px]"] {
+    font-size: clamp(2rem, 9.2vw, 3.1rem) !important;
+    line-height: 1.1 !important;
+    white-space: normal !important;
+  }
+
+  .nt-page-content [class*="text-[48px]"],
+  .nt-page-content [class*="text-[44px]"],
+  .nt-page-content [class*="text-[40px]"] {
+    font-size: clamp(1.7rem, 7.6vw, 2.4rem) !important;
+    line-height: 1.15 !important;
+    white-space: normal !important;
+  }
+
+  .nt-page-content [class*="text-[32px]"],
+  .nt-page-content [class*="text-[28px]"],
+  .nt-page-content [class*="text-[24px]"] {
+    font-size: clamp(1.35rem, 5.6vw, 1.7rem) !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+  }
+
+  /* The hero is handled separately in polish.css — don't double-shrink it. */
+  .nt-hero-section [class*="text-[76px]"] {
+    white-space: nowrap !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Shared footer
+   ------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  [data-name="SharedFooter"] {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  [data-name="SharedFooter"] {
+    padding-top: 56px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  [data-name="SharedFooter"] [class*="px-[28px]"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  [data-name="SharedFooter"] [data-name="HorizontalBorder"] {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+    height: auto !important;
+    gap: 36px 28px !important;
+    padding-bottom: 36px !important;
+  }
+
+  /* Brand column spans the full row above the link columns. */
+  [data-name="SharedFooter"] [data-name="HorizontalBorder"] > .col-1 {
+    grid-column: 1 / -1 !important;
+  }
+
+  [data-name="SharedFooter"] [class*="h-[182px]"] {
+    height: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  [data-name="SharedFooter"] [data-name="HorizontalBorder"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [data-name="SharedFooter"] [class*="max-w-[280px]"],
+  [data-name="SharedFooter"] [class*="w-[280px]"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

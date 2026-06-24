@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(awk '/^function Section[0-9]*\\\\\\(\\\\\\).*\\\\{/,/^function / {if \\(/data-name=\"Section/ || /class=.*nt-/ || /function Section/\\) print NR\": \"$0}' \"c:\\\\Users\\\\USER\\\\Downloads\\\\new mmh\\\\src\\\\imports\\\\1440WDefault\\\\index.tsx\")",
-      "Bash(awk '/^function Section[0-9]*\\\\\\(\\\\\\)/{getline; getline; print NR\": \"$0}' \"c:\\\\Users\\\\USER\\\\Downloads\\\\new mmh\\\\src\\\\imports\\\\1440WDefault\\\\index.tsx\")"
+      "Bash(awk '/^function Section[0-9]*\\\\\\(\\\\\\)/{getline; getline; print NR\": \"$0}' \"c:\\\\Users\\\\USER\\\\Downloads\\\\new mmh\\\\src\\\\imports\\\\1440WDefault\\\\index.tsx\")",
+      "Bash(NODE_OPTIONS=\"--max-old-space-size=8192\" npx next build --webpack)"
     ]
   }
 }

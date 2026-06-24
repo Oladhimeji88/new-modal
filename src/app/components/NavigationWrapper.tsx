@@ -17,14 +17,36 @@ export function NavigationWrapper({ children }: NavigationWrapperProps) {
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
+
+      // Anchors with an explicit href already navigate natively (hero CTAs,
+      // product/footer links). Don't intercept them here.
+      const anchor = target.closest<HTMLElement>('a[href]');
+
       const navItem = target.closest<HTMLElement>("[data-nav]");
       const productMenuItem = target.closest<HTMLElement>('[data-name="Link"]');
       const isProductMenuLink = !!productMenuItem?.closest(".nt-products-menu");
-      const text = (
+
+      const rawText = (
         navItem?.dataset.nav ??
         (isProductMenuLink ? productMenuItem?.textContent : target.textContent) ??
         ""
       ).trim().toLowerCase();
+
+      // Product dropdown cards carry a long concatenated label
+      // (e.g. "nativetalkbusinessnativetalk business"). Resolve the intended
+      // product by keyword so each card links to its page.
+      const resolveProduct = (value: string): string | null => {
+        if (value.includes("voip")) return "voip";
+        if (value.includes("crm")) return "crm";
+        if (value.includes("enterprise")) return "enterprise";
+        if (value.includes("business")) return "business";
+        if (value.includes("personal")) return "personal";
+        return null;
+      };
+
+      const text = isProductMenuLink
+        ? resolveProduct(rawText) ?? rawText
+        : rawText;
 
       const parentParagraph = target.closest('p');
       const hasNavParent = (
