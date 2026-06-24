@@ -612,6 +612,14 @@ body {
   width: 100% !important;
 }
 
+/* About hero: branded gradient background (replaces the photo). */
+.nt-about-hero {
+  background:
+    radial-gradient(circle at 16% 22%, rgba(135, 255, 92, 0.22), transparent 38%),
+    radial-gradient(circle at 88% 78%, rgba(62, 191, 15, 0.16), transparent 42%),
+    linear-gradient(135deg, #071412 0%, #0a211f 52%, #14463a 100%) !important;
+}
+
 [data-name="about-us-page"] > [data-name="Frame"],
 [data-name="about-us-page"] > [data-name="Footer"] {
   width: 100% !important;

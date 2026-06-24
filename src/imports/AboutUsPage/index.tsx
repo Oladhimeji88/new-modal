@@ -142,22 +142,13 @@ function Frame4() {
         <span className="leading-none">{` Africa's Communications Future`}</span>
       </p>
       <p className="[word-break:break-word] font-['Inter:Regular',sans-serif] font-normal leading-[1.6] not-italic opacity-80 relative shrink-0 text-[18px] text-white w-[600px]">{`Solutions that enhance communication for businesses and individuals, providing the tools needed to connect and succeed in today's fast-paced digital landscape.`}</p>
-      <Frame6 />
     </div>
   );
 }
 
 function Frame3() {
   return (
-    <div className="bg-[#0a211f] content-stretch flex flex-col gap-[40px] h-[691px] items-start justify-center overflow-clip px-[112px] py-[20px] relative shrink-0 w-[1440px]" data-name="Frame">
-      <div className="absolute h-[1010px] left-[-427px] top-[-136px] w-[1911px]" data-name="Image">
-        <div aria-hidden className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 overflow-hidden">
-            <img alt="" className="absolute h-full left-[-25.05%] max-w-none top-0 w-[150.1%]" src={imgImage} />
-          </div>
-          <div className="absolute bg-[rgba(0,0,0,0.6)] inset-0" />
-        </div>
-      </div>
+    <div className="nt-about-hero bg-[#0a211f] content-stretch flex flex-col gap-[40px] h-[691px] items-start justify-center overflow-clip px-[112px] py-[20px] relative shrink-0 w-[1440px]" data-name="Frame">
       <Frame4 />
     </div>
   );
