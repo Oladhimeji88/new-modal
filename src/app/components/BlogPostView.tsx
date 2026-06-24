@@ -83,9 +83,14 @@ export function BlogPostView({ slug }: { slug: string }) {
                       className="nt-blog-related-card"
                       onClick={() => router.push(`/blog/${r.slug}`)}
                     >
-                      <span className="nt-blog-tag">{r.category}</span>
+                      <span className="nt-blog-related-media">
+                        {r.image ? (
+                          <img src={r.image} alt={r.title} />
+                        ) : (
+                          <span className="nt-blog-related-fallback">{r.category}</span>
+                        )}
+                      </span>
                       <span className="nt-blog-related-title">{r.title}</span>
-                      <span className="nt-blog-meta">{formatDate(r.date)}</span>
                     </button>
                   ))}
                 </div>

@@ -280,25 +280,60 @@
 }
 
 .nt-blog-related-card {
-  background: #fafbf7;
-  border: 1px solid #ece9df;
-  border-radius: 8px;
+  background: transparent;
+  border: 0;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 20px;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
   text-align: left;
 }
 
-.nt-blog-related-card:hover {
-  border-color: #cdd6cd;
+.nt-blog-related-media {
+  aspect-ratio: 16 / 10;
+  background: #0a211f;
+  border-radius: 8px;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.nt-blog-related-media img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.nt-blog-related-card:hover .nt-blog-related-media img {
+  transform: scale(1.05);
+}
+
+.nt-blog-related-fallback {
+  align-items: center;
+  background: linear-gradient(135deg, #0a211f, #2c6e49);
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  font-size: 10px;
+  font-weight: 700;
+  height: 100%;
+  justify-content: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  width: 100%;
 }
 
 .nt-blog-related-title {
-  font-size: 16px;
-  font-weight: 700;
+  color: #0a211f;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1.3;
+}
+
+.nt-blog-related-card:hover .nt-blog-related-title {
+  color: #15463a;
 }
 
 /* ---------------------------------------------------------------------------
