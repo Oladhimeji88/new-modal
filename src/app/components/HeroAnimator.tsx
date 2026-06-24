@@ -42,15 +42,26 @@ export function HeroAnimator() {
           const originals = Array.from(colEl.children) as HTMLElement[];
           if (!originals.length) return;
 
-          // Measure the bounding box of the original stack.
+          // Measure the real content extent from the actual <img> rectangles.
+          // Some columns wrap images in an inset-0 / overflow-clip box, so the
+          // direct children report a clipped height — the images themselves
+          // give the true top/bottom of the stack.
+          const colRect = colEl.getBoundingClientRect();
+          const imgs = Array.from(colEl.querySelectorAll("img"));
           let minTop = Infinity;
           let maxBottom = -Infinity;
-          originals.forEach((el) => {
-            const top = el.offsetTop;
-            const bottom = top + el.offsetHeight;
+          imgs.forEach((img) => {
+            const r = img.getBoundingClientRect();
+            const top = r.top - colRect.top;
+            const bottom = r.bottom - colRect.top;
             if (top < minTop) minTop = top;
             if (bottom > maxBottom) maxBottom = bottom;
           });
+          // Fall back to the column box if there were no measurable images.
+          if (!Number.isFinite(minTop) || !Number.isFinite(maxBottom)) {
+            minTop = 0;
+            maxBottom = colEl.offsetHeight;
+          }
 
           const period = Math.round(maxBottom - minTop);
           if (!Number.isFinite(period) || period <= 0) return;
@@ -59,12 +70,26 @@ export function HeroAnimator() {
 
           // Stack identical copies above and below so the viewport is always
           // filled while the column drifts a full period in either direction.
-          [-2, -1, 1, 2].forEach((mult) => {
+          // Each wrapper is a full period tall so inset-0 image boxes inside a
+          // column render fully in the copies (instead of collapsing to zero
+          // height, which left blank gaps between repeats).
+          [-3, -2, -1, 1, 2, 3].forEach((mult) => {
             const wrapper = document.createElement("div");
             wrapper.setAttribute("data-hero-clone", "1");
-            wrapper.style.cssText = `position:absolute;top:${mult * period}px;left:0;right:0;`;
+            wrapper.style.cssText = `position:absolute;top:${mult * period}px;left:0;right:0;height:${period}px;`;
             originals.forEach((child) => wrapper.appendChild(child.cloneNode(true)));
             colEl.appendChild(wrapper);
+          });
+
+          // Extend the original column's inset-0 (full-height) image box to a
+          // full period so its images line up with the copies and the strip
+          // stays continuous across the loop seam. The Mask Group still clips
+          // the visible area, so this only affects the off-screen tiling.
+          originals.forEach((el) => {
+            if (typeof el.className === "string" && el.className.includes("inset-0")) {
+              el.style.height = `${period}px`;
+              el.style.bottom = "auto";
+            }
           });
 
           const { direction, speed } = COLUMNS[i];
