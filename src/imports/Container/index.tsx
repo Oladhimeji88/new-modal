@@ -81,10 +81,10 @@ function Heading1() {
 
 function Link() {
   return (
-    <div className="content-stretch flex flex-col gap-[11.99px] items-start min-h-[230px] relative shrink-0 w-full" data-name="Link">
+    <a aria-label="NativeTalk Business" className="content-stretch flex flex-col gap-[11.99px] items-start min-h-[230px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link" href="/business-app">
       <Container4 />
       <Heading1 />
-    </div>
+    </a>
   );
 }
 
@@ -164,10 +164,10 @@ function Heading3() {
 
 function Link1() {
   return (
-    <div className="content-stretch flex flex-col gap-[11.99px] items-start min-h-[230px] relative shrink-0 w-full" data-name="Link">
+    <a aria-label="NativeTalk CRM" className="content-stretch flex flex-col gap-[11.99px] items-start min-h-[230px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link" href="/crm">
       <Container7 />
       <Heading3 />
-    </div>
+    </a>
   );
 }
 
@@ -245,10 +245,10 @@ function Heading5() {
 
 function Link2() {
   return (
-    <div className="content-stretch flex flex-col gap-[11.99px] items-start min-h-[230px] relative shrink-0 w-full" data-name="Link">
+    <a aria-label="NativeTalk VoIP" className="content-stretch flex flex-col gap-[11.99px] items-start min-h-[230px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link" href="/voip">
       <Container10 />
       <Heading5 />
-    </div>
+    </a>
   );
 }
 

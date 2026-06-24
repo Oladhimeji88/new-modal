@@ -170,6 +170,39 @@ body {
   width: 100% !important;
 }
 
+/* Center the products mega-menu content within a tidy, centered column. */
+.nt-products-menu [data-name="Section"] {
+  border-left: 0 !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%);
+  width: min(1180px, calc(100% - 122px)) !important;
+}
+
+.nt-products-menu [data-name="Section"] > [data-name="Container"] {
+  left: 0 !important;
+  right: 0 !important;
+}
+
+/* The card row (last container) centers its three cards. */
+.nt-products-menu [data-name="Section"] > [data-name="Container"]:last-child {
+  justify-content: center !important;
+}
+
+/* Cards lift on hover (already) — now also gently scale their imagery. */
+.nt-products-menu [data-name="Link"] [data-name="Container"] {
+  overflow: hidden;
+}
+
+.nt-products-menu [data-name="Link"] [data-name="Container"] img {
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.nt-products-menu [data-name="Link"]:hover [data-name="Container"] img {
+  transform: scale(1.08);
+}
+
 @keyframes ntBackdropIn {
   from { opacity: 0; }
   to { opacity: 1; }
