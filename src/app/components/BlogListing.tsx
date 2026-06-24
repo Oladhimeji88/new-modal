@@ -67,7 +67,10 @@ export function BlogListing() {
       <main className="nt-blog-page">
         <header className="nt-blog-masthead">
           <p className="nt-blog-eyebrow">The NativeTalk Blog</p>
-          <h1>Ideas on communication, built for African businesses</h1>
+          <h1>
+            Ideas on communication,{' '}
+            <span className="nt-mast-nowrap">built for African businesses</span>
+          </h1>
           <p className="nt-blog-sub">
             Product thinking, practical guides, and stories on calling, messaging, and growing
             customer relationships.
