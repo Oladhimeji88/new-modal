@@ -6,3 +6,4 @@ node_modules
 vid/
 
 .vercel
+config.bat
