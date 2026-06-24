@@ -41,6 +41,7 @@ import imgImage1 from "./5000c8a4382a2876cfc8b59f531fa7684d837897.png";
 import { imgContainer, imgContainer19, imgGroup, imgG3366, imgG3367, imgG3400, imgGroup1, imgGroup2, imgC20C5Feebed0E15106771D2261B36A0F53B6C2D44512X3238Webp } from "./svg-342b1";
 import { StoryBlog } from "../../app/components/StoryBlog";
 import { HomeFaq } from "../../app/components/HomeFaq";
+import { Testimonials } from "../../app/components/Testimonials";
 
 function Frame() {
   return (
@@ -2990,7 +2991,7 @@ function Container142() {
   return (
     <div className="content-stretch flex flex-col gap-[80px] items-center max-w-[1216px] pb-[208px] pt-[110px] relative shrink-0 w-full" data-name="Container">
       <Container143 />
-      <AstroIsland7 />
+      <Testimonials />
     </div>
   );
 }

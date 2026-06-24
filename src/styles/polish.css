@@ -232,6 +232,102 @@ body {
   transform: scale(1.06);
 }
 
+/* ---------------------------------------------------------------------------
+   Testimonials marquee (text-only cards). Two rows scroll opposite directions;
+   each row's content is duplicated and translated -50% for a seamless loop.
+   ------------------------------------------------------------------------- */
+.nt-tm {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow: hidden;
+  padding: 28px 0;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.nt-tm-row {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  will-change: transform;
+}
+
+.nt-tm-row-a {
+  animation: nt-tm-scroll 64s linear infinite;
+}
+
+.nt-tm-row-b {
+  animation: nt-tm-scroll-rev 72s linear infinite;
+}
+
+.nt-tm:hover .nt-tm-row {
+  animation-play-state: paused;
+}
+
+@keyframes nt-tm-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes nt-tm-scroll-rev {
+  from { transform: translate3d(-50%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+.nt-tm-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(10, 33, 31, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(10, 33, 31, 0.07);
+  display: flex;
+  flex: 0 0 380px;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: space-between;
+  padding: 26px 28px;
+  width: 380px;
+}
+
+.nt-tm-quote {
+  color: #14342b;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.nt-tm-person {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nt-tm-name {
+  color: #0a211f;
+  font-size: 15.5px;
+  font-weight: 600;
+}
+
+.nt-tm-role {
+  color: rgba(10, 33, 31, 0.6);
+  font-size: 13px;
+}
+
+@media (max-width: 560px) {
+  .nt-tm-card {
+    flex-basis: 300px;
+    padding: 22px;
+    width: 300px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nt-tm-row {
+    animation: none;
+  }
+}
+
 @keyframes ntBackdropIn {
   from { opacity: 0; }
   to { opacity: 1; }
