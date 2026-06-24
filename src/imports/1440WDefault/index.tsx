@@ -115,7 +115,7 @@ function Link() {
 
 function Link1() {
   return (
-    <a className="h-full relative rounded-[9999px] shrink-0 cursor-pointer no-underline" data-name="Link" href="/pricing">
+    <a className="h-full relative rounded-[9999px] shrink-0 cursor-pointer no-underline" data-name="Link" href="#products">
       <div aria-hidden className="absolute border border-[rgba(255,255,255,0.3)] border-solid inset-0 pointer-events-none rounded-[9999px]" />
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center px-[22.8px] py-[13.8px] relative size-full">
@@ -1917,7 +1917,7 @@ function Container72() {
 
 function Section4() {
   return (
-    <div className="bg-[#0a211f] content-stretch flex flex-col items-start justify-center overflow-clip relative shrink-0 w-full" data-name="Section">
+    <div className="bg-[#0a211f] content-stretch flex flex-col items-start justify-center overflow-clip relative shrink-0 w-full scroll-mt-[96px]" data-name="Section" id="products">
       <Container72 />
     </div>
   );
