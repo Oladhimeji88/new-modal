@@ -150,6 +150,26 @@
   }
 }
 
+/* Full-bleed sections: the Contact page (and any other) hard-codes section
+   width at 1440px and left-aligns, leaving a gap on wide screens. Make those
+   sections span the full viewport so their backgrounds reach both edges. */
+.nt-page-content [class*="w-[1440px]"] {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Keep the inner content readable + centered inside the full-bleed sections. */
+@media (min-width: 1025px) {
+  .nt-page-content [data-name="Hero"],
+  .nt-page-content [data-name="Contact-Cards"],
+  .nt-page-content [data-name="Form-Section"],
+  .nt-page-content [data-name="FAQ"],
+  .nt-page-content [data-name="CTA"] {
+    padding-left: max(112px, calc((100% - 1216px) / 2)) !important;
+    padding-right: max(112px, calc((100% - 1216px) / 2)) !important;
+  }
+}
+
 @media (max-width: 1024px) {
   /* Trim the oversized horizontal gutters used across every section. */
   .nt-page-content [class*="px-[112px]"] {
