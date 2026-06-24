@@ -480,3 +480,43 @@
     scroll-snap-align: center;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Remaining large fixed widths / min-widths that would overflow small screens.
+   (The product cards keep their width — they scroll horizontally instead.)
+   ------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .nt-page-content [class*="min-w-[1064px]"],
+  .nt-page-content [class*="min-w-[840px]"],
+  .nt-page-content [class*="min-w-[720px]"],
+  .nt-page-content [class*="min-w-[700px]"] {
+    min-width: 0 !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .nt-page-content [class*="w-[1911px]"],
+  .nt-page-content [class*="w-[1064px]"],
+  .nt-page-content [class*="w-[967"],
+  .nt-page-content [class*="w-[885px]"],
+  .nt-page-content [class*="w-[840px]"],
+  .nt-page-content [class*="w-[700px]"],
+  .nt-page-content [class*="w-[683px]"],
+  .nt-page-content [class*="w-[590"],
+  .nt-page-content [class*="w-[576px]"],
+  .nt-page-content [class*="w-[567px]"],
+  .nt-page-content [class*="w-[541px]"],
+  .nt-page-content [class*="w-[519px]"],
+  .nt-page-content [class*="w-[517px]"],
+  .nt-page-content [class*="w-[498px]"],
+  .nt-page-content [class*="w-[453px]"],
+  .nt-page-content [class*="w-[438px]"],
+  .nt-page-content [class*="w-[420px]"],
+  .nt-page-content [class*="w-[416"],
+  .nt-page-content [class*="w-[415px]"],
+  .nt-page-content [class*="w-[401"],
+  .nt-page-content [class*="w-[400px]"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
