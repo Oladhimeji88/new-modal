@@ -388,3 +388,95 @@
     max-width: 100% !important;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Comprehensive mobile heading scaling for the Figma-exported pages. Covers the
+   many decimal px sizes the base rules miss. Font-size only, so the hero keeps
+   its own sizing via higher-specificity rules in polish.css.
+   ------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .nt-page-content [class*="text-[92px]"],
+  .nt-page-content [class*="text-[80px]"],
+  .nt-page-content [class*="text-[76px]"],
+  .nt-page-content [class*="text-[72px]"],
+  .nt-page-content [class*="text-[66.2px]"],
+  .nt-page-content [class*="text-[64px]"],
+  .nt-page-content [class*="text-[60px]"],
+  .nt-page-content [class*="text-[59.9px]"],
+  .nt-page-content [class*="text-[57.8px]"],
+  .nt-page-content [class*="text-[57.5px]"],
+  .nt-page-content [class*="text-[56px]"],
+  .nt-page-content [class*="text-[55.9px]"],
+  .nt-page-content [class*="text-[55px]"],
+  .nt-page-content [class*="text-[54.8px]"],
+  .nt-page-content [class*="text-[54.4px]"],
+  .nt-page-content [class*="text-[54px]"],
+  .nt-page-content [class*="text-[52px]"] {
+    font-size: clamp(2rem, 5.8vw, 3.3rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  .nt-page-content [class*="text-[48px]"],
+  .nt-page-content [class*="text-[46.3px]"],
+  .nt-page-content [class*="text-[44.4px]"],
+  .nt-page-content [class*="text-[44px]"],
+  .nt-page-content [class*="text-[43.5px]"],
+  .nt-page-content [class*="text-[40px]"] {
+    font-size: clamp(1.7rem, 4.6vw, 2.4rem) !important;
+    line-height: 1.15 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nt-page-content [class*="text-[92px]"],
+  .nt-page-content [class*="text-[80px]"],
+  .nt-page-content [class*="text-[76px]"],
+  .nt-page-content [class*="text-[72px]"],
+  .nt-page-content [class*="text-[66.2px]"],
+  .nt-page-content [class*="text-[64px]"],
+  .nt-page-content [class*="text-[60px]"],
+  .nt-page-content [class*="text-[59.9px]"],
+  .nt-page-content [class*="text-[57.8px]"],
+  .nt-page-content [class*="text-[57.5px]"],
+  .nt-page-content [class*="text-[56px]"],
+  .nt-page-content [class*="text-[55.9px]"],
+  .nt-page-content [class*="text-[55px]"],
+  .nt-page-content [class*="text-[54.8px]"],
+  .nt-page-content [class*="text-[54.4px]"],
+  .nt-page-content [class*="text-[54px]"],
+  .nt-page-content [class*="text-[52px]"] {
+    font-size: clamp(1.8rem, 8.8vw, 2.5rem) !important;
+  }
+
+  .nt-page-content [class*="text-[48px]"],
+  .nt-page-content [class*="text-[46.3px]"],
+  .nt-page-content [class*="text-[44.4px]"],
+  .nt-page-content [class*="text-[44px]"],
+  .nt-page-content [class*="text-[43.5px]"],
+  .nt-page-content [class*="text-[40px]"] {
+    font-size: clamp(1.5rem, 7vw, 2rem) !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   "Explore our other Product" cards: fixed-width cards clip on small screens.
+   Let the row scroll horizontally with snap so all three are reachable.
+   ------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .nt-explore-cards {
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    width: 100% !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nt-explore-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nt-explore-cards > [data-name="Margin"] {
+    scroll-snap-align: center;
+  }
+}

@@ -1863,7 +1863,7 @@ function Margin11() {
 
 function Blur() {
   return (
-    <div className="blur-[0px] content-stretch flex items-start relative self-stretch shrink-0" data-name="Blur">
+    <div className="nt-explore-cards blur-[0px] content-stretch flex items-start relative self-stretch shrink-0" data-name="Blur">
       <Margin4 />
       <Margin5 />
       <Margin7 />
