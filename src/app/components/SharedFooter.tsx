@@ -1,6 +1,21 @@
 import svgPaths from "../../imports/ContactUsPage/svg-q7igkv02dk";
 import imgImage1 from "../../imports/ContactUsPage/5000c8a4382a2876cfc8b59f531fa7684d837897.png";
 
+const FOOTER_LINKS: Record<string, string> = {
+  Personal: "/personal",
+  Business: "/business-app",
+  Enterprise: "/enterprise",
+  Pricing: "/pricing",
+  FAQs: "/faq",
+  "Q&A Forum": "/faq",
+  Terms: "/terms",
+  Privacy: "/privacy",
+  "About Us": "/about",
+  Contact: "/contact",
+  Blog: "/blog",
+  Cookies: "/privacy",
+};
+
 // ── Logo ─────────────────────────────────────────────────────────────────────
 
 function FooterLogoSvg() {
@@ -143,11 +158,11 @@ function FooterCol2() {
           </div>
         </div>
         {["Personal", "Business", "Enterprise"].map((item) => (
-          <div key={item} className="content-stretch flex flex-col items-start py-[6px] first:pt-[21px] relative shrink-0 w-full" data-name="Link">
+          <a key={item} href={FOOTER_LINKS[item] ?? "/"} className="content-stretch flex flex-col items-start py-[6px] first:pt-[21px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link">
             <div className="[word-break:break-word] flex flex-col font-['Outfit:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#9cb4a7] text-[14.5px] w-full">
               <p className="leading-[21.75px]">{item}</p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
@@ -166,11 +181,11 @@ function FooterCol3() {
           </div>
         </div>
         {["Pricing", "FAQs", "Q&A Forum", "Terms", "Privacy"].map((item) => (
-          <div key={item} className="content-stretch flex flex-col items-start py-[6px] first:pt-[21px] relative shrink-0 w-full" data-name="Link">
+          <a key={item} href={FOOTER_LINKS[item] ?? "/"} className="content-stretch flex flex-col items-start py-[6px] first:pt-[21px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link">
             <div className="[word-break:break-word] flex flex-col font-['Outfit:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#9cb4a7] text-[14.5px] w-full">
               <p className="leading-[21.75px]">{item}</p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
@@ -189,11 +204,11 @@ function FooterCol4() {
           </div>
         </div>
         {["About Us", "Contact", "Blog"].map((item) => (
-          <div key={item} className="content-stretch flex flex-col items-start py-[6px] first:pt-[21px] relative shrink-0 w-full" data-name="Link">
+          <a key={item} href={FOOTER_LINKS[item] ?? "/"} className="content-stretch flex flex-col items-start py-[6px] first:pt-[21px] relative shrink-0 w-full cursor-pointer no-underline" data-name="Link">
             <div className="[word-break:break-word] flex flex-col font-['Outfit:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#9cb4a7] text-[14.5px] w-full">
               <p className="leading-[21.75px]">{item}</p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
@@ -247,10 +262,12 @@ function FooterBottom() {
           <p className="leading-[20.25px]">© 2026 NativeTalk. All rights reserved.</p>
         </div>
       </div>
-      <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Container">
-        <div className="[word-break:break-word] flex flex-col font-['Outfit:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#9cb4a7] text-[13.5px] whitespace-nowrap">
-          <p className="leading-[20.25px]">Privacy · Terms · Cookies</p>
-        </div>
+      <div className="content-stretch flex font-['Outfit:Regular',sans-serif] gap-[8px] items-center relative shrink-0 text-[#9cb4a7] text-[13.5px] whitespace-nowrap" data-name="Container">
+        <a className="leading-[20.25px] no-underline text-inherit cursor-pointer" data-name="Link" href="/privacy">Privacy</a>
+        <span aria-hidden>·</span>
+        <a className="leading-[20.25px] no-underline text-inherit cursor-pointer" data-name="Link" href="/terms">Terms</a>
+        <span aria-hidden>·</span>
+        <a className="leading-[20.25px] no-underline text-inherit cursor-pointer" data-name="Link" href="/privacy">Cookies</a>
       </div>
     </div>
   );
