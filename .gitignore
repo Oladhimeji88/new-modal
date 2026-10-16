@@ -1,0 +1,9 @@
+node_modules
+.next
+*.log
+*.tsbuildinfo
+.vercel
+vid/
+
+.vercel
+config.bat

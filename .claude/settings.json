@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk '/^function Section[0-9]*\\\\\\(\\\\\\).*\\\\{/,/^function / {if \\(/data-name=\"Section/ || /class=.*nt-/ || /function Section/\\) print NR\": \"$0}' \"c:\\\\Users\\\\USER\\\\Downloads\\\\new mmh\\\\src\\\\imports\\\\1440WDefault\\\\index.tsx\")",
+      "Bash(awk '/^function Section[0-9]*\\\\\\(\\\\\\)/{getline; getline; print NR\": \"$0}' \"c:\\\\Users\\\\USER\\\\Downloads\\\\new mmh\\\\src\\\\imports\\\\1440WDefault\\\\index.tsx\")",
+      "Bash(NODE_OPTIONS=\"--max-old-space-size=8192\" npx next build --webpack)",
+      "Bash(ls public/)",
+      "Bash(ls public/product/)",
+      "Bash(ls src/app/lib/)",
+      "Bash(\"/c/Program Files/nodejs/node.exe\" node_modules/next/dist/bin/next dev -p 3000)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000/about\" -UseBasicParsing -TimeoutSec 12; \"about -> $\\($r.StatusCode\\)\"; \"value-card class: $\\($r.Content -match 'nt-value-card'\\)\"; \"value-icon class: $\\($r.Content -match 'nt-value-icon'\\)\"; \"old dot removed \\(Ellipse should be False\\): $\\($r.Content -match 'data-name=\\\\\"Ellipse\\\\\"'\\)\" } catch { \"about -> ERR $\\($_.Exception.Message\\)\" })"
+    ]
+  }
+}

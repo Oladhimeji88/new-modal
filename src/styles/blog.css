@@ -1,0 +1,900 @@
+/* ============================================================================
+   Blog (Medium-inspired), blog admin (/nativeblogtrack), and FAQ page.
+   Low border-radius, generous whitespace, readable typography.
+   ========================================================================== */
+
+.nt-blog-page {
+  background: transparent;
+  color: #0a211f;
+  min-height: 100vh;
+  margin: 0 auto;
+  max-width: 1320px;
+  padding: 132px 32px 120px;
+}
+
+.nt-blog-masthead {
+  border-bottom: 1px solid #ece9df;
+  margin-bottom: 48px;
+  padding-bottom: 40px;
+}
+
+.nt-blog-eyebrow {
+  color: #2c6e49;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em !important;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+}
+
+.nt-blog-masthead h1 {
+  font-family: var(--font-body);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+  margin: 0;
+  max-width: 32ch;
+}
+
+.nt-mast-nowrap {
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .nt-mast-nowrap {
+    white-space: normal;
+  }
+}
+
+.nt-blog-sub {
+  color: #5b665f;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 18px 0 0;
+  max-width: 60ch;
+}
+
+.nt-blog-loading,
+.nt-blog-missing {
+  color: #5b665f;
+  font-size: 17px;
+  padding: 40px 0;
+}
+
+/* Shared meta + tag */
+.nt-blog-tag {
+  align-self: flex-start;
+  background: #eef6e7;
+  border-radius: 4px;
+  color: #2c6e49;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.nt-blog-meta {
+  color: #8a948c;
+  font-size: 14px;
+  margin: 0;
+}
+
+.nt-blog-excerpt {
+  color: #4b554e;
+  font-size: 16.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Cover images — deliberately low radius */
+.nt-blog-cover {
+  background: #f1f3ec;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.nt-blog-cover img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.nt-blog-cover-empty {
+  align-items: center;
+  background: linear-gradient(135deg, #0a211f 0%, #15463a 60%, #2c6e49 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.nt-blog-cover-empty span {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Featured */
+.nt-blog-featured {
+  align-items: center;
+  border-bottom: 1px solid #ece9df;
+  cursor: pointer;
+  display: grid;
+  gap: 44px;
+  grid-template-columns: 1.05fr 1fr;
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+}
+
+.nt-blog-featured-cover {
+  aspect-ratio: 16 / 11;
+}
+
+.nt-blog-featured-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nt-blog-featured-body h2 {
+  font-family: var(--font-body);
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.nt-blog-featured:hover h2 {
+  color: #15463a;
+}
+
+/* List rows (text left, thumbnail right) */
+.nt-blog-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 760px;
+}
+
+.nt-blog-row {
+  align-items: center;
+  border-bottom: 1px solid #ece9df;
+  cursor: pointer;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr 200px;
+  padding: 36px 0;
+}
+
+.nt-blog-row:last-child {
+  border-bottom: 0;
+}
+
+.nt-blog-row-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.nt-blog-row-text h3 {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.nt-blog-row:hover h3 {
+  color: #15463a;
+}
+
+.nt-blog-row-cover {
+  aspect-ratio: 4 / 3;
+  width: 200px;
+}
+
+/* ---------------------------------------------------------------------------
+   Article (single post) — Medium reading column
+   ------------------------------------------------------------------------- */
+.nt-blog-article-page {
+  max-width: 1320px;
+}
+
+.nt-blog-article {
+  margin: 0 auto;
+  max-width: 1040px;
+}
+
+.nt-blog-back {
+  background: transparent;
+  border: 0;
+  color: #2c6e49;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 28px;
+  padding: 0;
+}
+
+.nt-blog-back:hover {
+  text-decoration: underline;
+}
+
+.nt-blog-article h1 {
+  font-family: var(--font-body);
+  font-size: clamp(2.1rem, 4.5vw, 3.1rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 16px 0 18px;
+}
+
+.nt-blog-article-meta {
+  color: #8a948c;
+  font-size: 15px;
+  margin: 0 0 32px;
+}
+
+.nt-blog-article-cover {
+  border-radius: 6px;
+  margin: 0 0 40px;
+  overflow: hidden;
+}
+
+.nt-blog-article-cover img {
+  display: block;
+  width: 100%;
+}
+
+.nt-blog-article-body p {
+  color: #232b26;
+  font-size: 19px;
+  line-height: 1.75;
+  margin: 0 0 26px;
+}
+
+.nt-blog-related {
+  border-top: 1px solid #ece9df;
+  margin-top: 56px;
+  padding-top: 40px;
+}
+
+.nt-blog-related h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 24px;
+}
+
+.nt-blog-related-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.nt-blog-related-card {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.nt-blog-related-media {
+  aspect-ratio: 16 / 10;
+  background: #0a211f;
+  border-radius: 8px;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.nt-blog-related-media img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.nt-blog-related-card:hover .nt-blog-related-media img {
+  transform: scale(1.05);
+}
+
+.nt-blog-related-fallback {
+  align-items: center;
+  background: linear-gradient(135deg, #0a211f, #2c6e49);
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  font-size: 10px;
+  font-weight: 700;
+  height: 100%;
+  justify-content: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.nt-blog-related-title {
+  color: #0a211f;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.nt-blog-related-card:hover .nt-blog-related-title {
+  color: #15463a;
+}
+
+/* ---------------------------------------------------------------------------
+   Blog Admin (/nativeblogtrack)
+   ------------------------------------------------------------------------- */
+.nt-admin {
+  background: #f4f6ef;
+  color: #0a211f;
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 100vh;
+  padding: 40px 24px 96px;
+}
+
+.nt-admin-head {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.nt-admin-eyebrow {
+  color: #2c6e49;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.nt-admin-head h1 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  margin: 0;
+}
+
+.nt-admin-view {
+  color: #15463a;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nt-admin-grid {
+  align-items: start;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1.3fr 1fr;
+}
+
+.nt-admin-form,
+.nt-admin-list {
+  background: #ffffff;
+  border: 1px solid #e4e1d4;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.nt-admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+
+.nt-admin-field > span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.nt-admin-field input[type='text'],
+.nt-admin-field input[type='date'],
+.nt-admin-field textarea {
+  background: #fbfcf8;
+  border: 1px solid #d8dccf;
+  border-radius: 8px;
+  color: #0a211f;
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 11px 13px;
+  width: 100%;
+}
+
+.nt-admin-field textarea {
+  line-height: 1.55;
+  resize: vertical;
+}
+
+.nt-admin-field input:focus,
+.nt-admin-field textarea:focus {
+  border-color: #3ebf0f;
+  outline: none;
+}
+
+.nt-admin-row {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.nt-admin-preview {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.nt-admin-preview img {
+  border: 1px solid #e4e1d4;
+  border-radius: 6px;
+  height: 70px;
+  object-fit: cover;
+  width: 110px;
+}
+
+.nt-admin-preview button,
+.nt-admin-secondary {
+  background: transparent;
+  border: 1px solid #d8dccf;
+  border-radius: 999px;
+  color: #5b665f;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 9px 16px;
+}
+
+.nt-admin-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.nt-admin-primary {
+  background: #3ebf0f;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 12px 24px;
+}
+
+.nt-admin-primary:hover {
+  background: #45d613;
+}
+
+.nt-admin-status {
+  background: #eef6e7;
+  border-radius: 8px;
+  color: #2c6e49;
+  font-weight: 600;
+  margin: 16px 0 0;
+  padding: 10px 14px;
+}
+
+.nt-admin-list h2 {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+.nt-admin-empty {
+  color: #8a948c;
+}
+
+.nt-admin-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nt-admin-list li {
+  border: 1px solid #ece9df;
+  border-radius: 8px;
+  display: flex;
+  gap: 14px;
+  padding: 12px;
+}
+
+.nt-admin-list li.is-active {
+  border-color: #3ebf0f;
+  box-shadow: 0 0 0 1px #3ebf0f;
+}
+
+.nt-admin-thumb {
+  align-items: center;
+  background: linear-gradient(135deg, #0a211f, #2c6e49);
+  border-radius: 6px;
+  display: flex;
+  flex: 0 0 auto;
+  height: 60px;
+  justify-content: center;
+  overflow: hidden;
+  width: 84px;
+}
+
+.nt-admin-thumb img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.nt-admin-thumb span {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nt-admin-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.nt-admin-item-body strong {
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.nt-admin-item-meta {
+  color: #8a948c;
+  font-size: 13px;
+}
+
+.nt-admin-item-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.nt-admin-item-actions button,
+.nt-admin-item-actions a {
+  background: transparent;
+  border: 0;
+  color: #2c6e49;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 0;
+  text-decoration: none;
+}
+
+.nt-admin-item-actions .nt-admin-delete {
+  color: #c0392b;
+}
+
+/* ---------------------------------------------------------------------------
+   FAQ page (/faq)
+   ------------------------------------------------------------------------- */
+.nt-faq-page {
+  background: #f7f9f2;
+  color: #0a211f;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+/* FAQ hero — mirrors the Contact Us hero (solid ink, pill eyebrow, split
+   white + green-italic heading, description). */
+.nt-faq-hero {
+  background: #0a211f;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 120px clamp(24px, 7vw, 112px);
+}
+
+.nt-faq-eyebrow-pill {
+  align-self: flex-start;
+  border: 1px solid #3ebf0f;
+  border-radius: 999px;
+  color: #3ebf0f;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  padding: 8px 16px;
+  text-transform: uppercase;
+}
+
+.nt-faq-hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nt-faq-title {
+  align-items: baseline;
+  column-gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  row-gap: 4px;
+}
+
+.nt-faq-title-main {
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+}
+
+.nt-faq-title-accent {
+  color: #3ebf0f;
+  font-family: var(--font-display-italic);
+  font-size: clamp(2.3rem, 4.8vw, 3.7rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.04;
+}
+
+.nt-faq-hero .nt-faq-intro {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 560px;
+}
+
+.nt-faq-body {
+  margin: 0 auto;
+  max-width: 880px;
+  padding: 72px clamp(24px, 5vw, 40px) 96px;
+}
+
+.nt-faq-group + .nt-faq-group {
+  margin-top: 56px;
+}
+
+.nt-faq-group h2 {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.nt-faq-page .nt-faq-list {
+  border-top: 1px solid #e4e1d4;
+  margin-top: 18px;
+}
+
+.nt-faq-page .nt-faq-item {
+  border-bottom: 1px solid #e4e1d4;
+}
+
+.nt-faq-page .nt-faq-summary {
+  font-size: 18px;
+  min-height: 72px;
+}
+
+.nt-faq-cta {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e4e1d4;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  justify-content: space-between;
+  margin-top: 56px;
+  padding: 28px 32px;
+}
+
+.nt-faq-cta h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+
+.nt-faq-cta p {
+  color: #5b665f;
+  margin: 0;
+}
+
+.nt-faq-cta a {
+  background: #3ebf0f;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  padding: 13px 24px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nt-faq-cta a:hover {
+  background: #45d613;
+}
+
+/* ---------------------------------------------------------------------------
+   Homepage "Our Story" blog tiles — 1 wide lead + 2 smaller (image on top,
+   serif-italic title and muted category below).
+   ------------------------------------------------------------------------- */
+.nt-story-grid {
+  align-items: start;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 2fr 1fr 1fr;
+  width: 100%;
+}
+
+.nt-story-tile,
+.nt-blog-tile {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.nt-story-tile-media,
+.nt-blog-tile-media {
+  background: #0a211f;
+  border-radius: 10px;
+  height: clamp(240px, 24vw, 360px);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.nt-story-tile-media img,
+.nt-blog-tile-media img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.nt-story-tile:hover .nt-story-tile-media img,
+.nt-blog-tile:hover .nt-blog-tile-media img {
+  transform: scale(1.045);
+}
+
+.nt-story-tile-fallback,
+.nt-blog-tile-fallback {
+  align-items: center;
+  background: linear-gradient(135deg, #0a211f, #15463a 60%, #2c6e49);
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  font-size: 12px;
+  font-weight: 700;
+  height: 100%;
+  justify-content: center;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.nt-story-tile-title,
+.nt-blog-tile-title {
+  color: #0a211f;
+  font-family: var(--font-display-italic);
+  font-size: clamp(1.5rem, 2.1vw, 2.05rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  line-height: 1.12;
+  margin: 2px 0 0;
+}
+
+/* Blog index cards use a smaller title than the homepage story tiles. */
+.nt-blog-tile-title {
+  font-size: clamp(1.15rem, 1.4vw, 1.4rem);
+  line-height: 1.18;
+}
+
+/* Homepage story cards: smaller title. */
+.nt-story-tile-title {
+  font-size: clamp(1.2rem, 1.55vw, 1.55rem);
+  line-height: 1.18;
+}
+
+.nt-story-tile-cat,
+.nt-blog-tile-cat {
+  color: #5b665f;
+  font-size: 14.5px;
+  margin: 0;
+}
+
+.nt-blog-tile-meta {
+  color: #99a39b;
+  font-size: 13px;
+  margin: 2px 0 0;
+}
+
+/* Homepage FAQ accordion width (matches the original Figma column). */
+.nt-home-faq {
+  max-width: 820px;
+  width: 100%;
+}
+
+/* ---------------------------------------------------------------------------
+   Blog index grid — 3 equal cards per row, square images, standard spacing.
+   ------------------------------------------------------------------------- */
+.nt-blog-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Blog cover images are always square (equal width and height) with a small
+   border radius. */
+.nt-blog-tile-media {
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  height: auto;
+}
+
+/* ---------------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  .nt-blog-page {
+    padding-top: 108px;
+  }
+
+  .nt-admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nt-story-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nt-story-tile.is-lead {
+    grid-column: span 2;
+  }
+
+  .nt-blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nt-blog-tile.is-lead {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .nt-story-grid,
+  .nt-blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nt-story-tile.is-lead,
+  .nt-blog-tile.is-lead {
+    grid-column: span 1;
+  }
+
+  .nt-blog-tile.is-lead .nt-blog-tile-media {
+    height: 260px;
+  }
+}

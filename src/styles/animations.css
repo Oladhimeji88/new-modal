@@ -1,0 +1,42 @@
+/* ============================================================================
+   Framer-style scroll/enter reveal animations (text + media), applied across
+   the site by GlobalReveal. Transition-based for soft, spring-like easing.
+   Elements only get these classes from JS, so with no JS they render normally.
+   ========================================================================== */
+
+.nt-anim {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.72s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.nt-anim-img {
+  opacity: 0;
+  transform: scale(1.045);
+  filter: blur(10px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s ease;
+  will-change: opacity, transform, filter;
+}
+
+.nt-anim.nt-anim-in,
+.nt-anim-img.nt-anim-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nt-anim,
+  .nt-anim-img {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
